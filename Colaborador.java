@@ -5,11 +5,12 @@ public class Colaborador {
     private String type;
     private double finalSalary;
 
-    public Colaborador(double baseSalary, int id, String name, String type) {
+    public Colaborador(int id, String name, String type,double baseSalary, double finalSalary) {
         this.baseSalary = baseSalary;
         this.id = id;
         this.name = name;
         this.type = type;
+        this.finalSalary = finalSalary;
     }
 
     public int getId() {
