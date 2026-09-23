@@ -1,14 +1,9 @@
-
-import org.json.simple.JSONObject;
-
 import java.util.Scanner;
 
 public class Menu {
 
-    private JsonFileManager export = new JsonFileManager();
-    private JSONObject json = new JSONObject();
+    private JsonFileManager data = new JsonFileManager();
     private MenuUtils menuUtils = new MenuUtils();
-    private Colaborador colaborador;
     private final Scanner input = new Scanner(System.in);
 
     public void menu(){
@@ -31,21 +26,8 @@ public class Menu {
 
         switch(option){
             case 1:
-                colaborador = menuUtils.criarColaborador();
-                json.put("id", colaborador.getId());
-                json.put("name", colaborador.getName());
-                json.put("type", colaborador.getType());
-                json.put("baseSalary", colaborador.getBaseSalary());
-                json.put("finalSalary", colaborador.getFinalSalary());
-                if (colaborador instanceof ColaboradorComissionado comissionado) {
-                    json.put("commission", comissionado.getCommission());
-                    json.put("productValue", comissionado.getProductValue());
-                }
-                if (colaborador instanceof ColaboradorProducao producao) {
-                    json.put("prodQuant", producao.getProdQuant());
-                    json.put("unitValue", producao.getUnitValue());
-                }
-                export.add(json);
+                data.add(menuUtils.criarColaborador().toJSON());
+                System.out.println("Colaborador criado com sucesso");
                 break;
             case 2:
                 break;
@@ -63,5 +45,6 @@ public class Menu {
                 System.out.println("Opção inválida tente novamente!");
                 menu();
         }
+        menu();
     }
 }

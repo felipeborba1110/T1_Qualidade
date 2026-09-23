@@ -8,7 +8,7 @@ import org.json.simple.parser.JSONParser;
 
 public class JsonFileManager {
 
-    private final String filePath = "C:\\Users\\1292418436\\Documents\\T1_Qualidade\\data.json";
+    private final String filePath = "data.json";
 
     public JSONArray read() {
 

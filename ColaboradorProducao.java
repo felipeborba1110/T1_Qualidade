@@ -1,3 +1,5 @@
+import org.json.simple.JSONObject;
+
 public class ColaboradorProducao extends Colaborador{
     private int prodQuant;
     private float unitValue;
@@ -5,6 +7,15 @@ public class ColaboradorProducao extends Colaborador{
         super(id, name, type, baseSalary, finalSalary);
         this.prodQuant = prodQuant;
         this.unitValue = unitValue;
+    }
+
+    @Override
+    public JSONObject toJSON() {
+        JSONObject json = super.toJSON();
+        json.put("prodQuant", prodQuant);
+        json.put("unitValue", unitValue);
+
+        return json;
     }
 
     public int getProdQuant() {

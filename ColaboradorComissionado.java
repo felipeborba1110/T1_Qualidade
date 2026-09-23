@@ -1,14 +1,25 @@
-public class ColaboradorComissionado extends Colaborador{
-    private double commission;
-    private double productValue;
+import org.json.simple.JSONObject;
 
-    public ColaboradorComissionado(int id, String name, String type, double baseSalary, double finalSalary, double commission, double productValue) {
+public class ColaboradorComissionado extends Colaborador{
+    private float commission;
+    private float productValue;
+
+    public ColaboradorComissionado(int id, String name, String type, double baseSalary, double finalSalary, float commission, float productValue) {
         super(id, name, type, baseSalary, finalSalary);
         this.commission = commission;
         this.productValue = productValue;
     }
 
-    public double getCommission() {
+    @Override
+    public JSONObject toJSON() {
+        JSONObject json = super.toJSON();
+        json.put("commission", commission);
+        json.put("productValue", productValue);
+
+        return json;
+    }
+
+    public float getCommission() {
         return commission;
     }
 
@@ -16,7 +27,7 @@ public class ColaboradorComissionado extends Colaborador{
         this.commission = commission;
     }
 
-    public double getProductValue() {
+    public float getProductValue() {
         return productValue;
     }
 

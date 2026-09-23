@@ -1,3 +1,5 @@
+import org.json.simple.JSONObject;
+
 public class Colaborador {
     private int id;
     private String name;
@@ -11,6 +13,16 @@ public class Colaborador {
         this.name = name;
         this.type = type;
         this.finalSalary = finalSalary;
+    }
+
+    public JSONObject toJSON(){
+        JSONObject json = new JSONObject();
+        json.put("id", id);
+        json.put("name", name);
+        json.put("type", type);
+        json.put("baseSalary", baseSalary);
+        json.put("finalSalary", finalSalary);
+        return json;
     }
 
     public int getId() {

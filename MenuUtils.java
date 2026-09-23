@@ -25,10 +25,10 @@ public class MenuUtils {
                 return new Colaborador(id,name,type,baseSalary,finalSalary);
             case "comissionado":
                 System.out.println("Insira o valor de venda dos produtos:");
-                double productValue = inputNum.nextDouble();
-                //Não funciona
-                System.out.println("Insira o percentual de comissão: (0.50 = 50%)");
-                double commission = inputNum.nextDouble();
+                float productValue = inputNum.nextFloat();
+
+                System.out.println("Insira o percentual de comissão: (0,50 = 50%)");
+                float commission = (inputNum.nextFloat()+1);
 
                 finalSalary = baseSalary + (productValue * commission);
 
