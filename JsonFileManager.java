@@ -1,6 +1,8 @@
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -8,7 +10,7 @@ import org.json.simple.parser.JSONParser;
 
 public class JsonFileManager {
 
-    private final String filePath = "./T1_Qualidade/data.json";
+    private final String filePath = "data.json";
 
     public JSONArray read() {
 
@@ -53,5 +55,18 @@ public class JsonFileManager {
         jsonArray.add(jsonObject);
 
         save(jsonArray);
+    }
+
+    public List<JSONObject> listaColaboradores(){
+        JsonFileManager json = new JsonFileManager();
+        JSONArray data = json.read();
+        List<JSONObject> listaColaboradores = new ArrayList<>();
+
+        for(Object obj : data){
+            JSONObject colaborador = (JSONObject) obj;
+            listaColaboradores.add(colaborador);
+        }
+
+        return listaColaboradores;
     }
 }
