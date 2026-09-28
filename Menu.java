@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Menu {
     private final JsonFileManager data = new JsonFileManager();
-    private final ColaboradorManager colaboradorManager = new ColaboradorManager();
+    private final UtilsColaborador utilsColaborador = new UtilsColaborador();
     private final Scanner input = new Scanner(System.in);
 
     public void menu(){
@@ -25,27 +25,32 @@ public class Menu {
 
         switch(option){
             case 1:
-                data.add(colaboradorManager.criarColaborador().toJSON());
+                data.add(utilsColaborador.criarColaborador().toJSON());
                 System.out.println("Colaborador criado com sucesso");
                 menu();
                 break;
             case 2:
-                colaboradorManager.procurarColaborador();
+                utilsColaborador.procurarColaborador();
                 menu();
                 break;
             case 3:
-                colaboradorManager.imprimirRelatorio();
+                utilsColaborador.imprimirRelatorio();
                 menu();
                 break;
             case 4:
+                utilsColaborador.imprimirResumo();
+                menu();
                 break;
             case 5:
+                utilsColaborador.modificarColaborador();
                 break;
             case 6:
-                colaboradorManager.imprimirTodosColaboradores();
+                utilsColaborador.imprimirTodosColaboradores();
                 menu();
                 break;
             case 7:
+                utilsColaborador.removerColaborador();
+                menu();
                 break;
             case 0:
                 break;
