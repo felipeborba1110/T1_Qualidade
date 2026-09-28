@@ -243,8 +243,7 @@ public class UtilsColaborador {
                 System.out.println("""
                         1- Nome
                         2- Salário Base
-                        3- Tipo
-                        """);
+                        3- Tipo""");
                 break;
             case "comissionado":
                 System.out.println("""
@@ -252,8 +251,7 @@ public class UtilsColaborador {
                         2- Salário Base
                         3- Tipo
                         4- Valor do Produto
-                        5- Comissão
-                        """);
+                        5- Comissão""");
                 break;
             case "producao":
                 System.out.println("""
@@ -261,8 +259,7 @@ public class UtilsColaborador {
                         2- Salário Base
                         3- Tipo
                         4- Valor da Unidade
-                        5- Quantidade de Unidades
-                        """);
+                        5- Quantidade de Unidades""");
                 break;
             default:
                 System.out.println("ERRO com o tipo do colaborador!");

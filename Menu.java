@@ -43,6 +43,7 @@ public class Menu {
                 break;
             case 5:
                 utilsColaborador.modificarColaborador();
+                menu();
                 break;
             case 6:
                 utilsColaborador.imprimirTodosColaboradores();
