@@ -15,8 +15,7 @@ public class UtilsColaborador {
 
         int id = validadorId();
 
-        System.out.println("Insira o nome:");
-        String name = inputStr.nextLine();
+        String name = lerNomeObrigatorio("Insira o nome:");
 
         double baseSalary = lerDoubleNaoNegativo("Insira o salário base:");
 
@@ -46,6 +45,17 @@ public class UtilsColaborador {
                 System.out.println("Erro ao criar colaborador, tente novamente! *Campos incorretos*");
                 return criarColaborador();
         }
+    }
+        private String lerNomeObrigatorio(String mensagem) {
+        String nome;
+        do {
+            System.out.println(mensagem);
+            nome = inputStr.nextLine().trim();
+            if (nome.isEmpty()) {
+                System.out.println("O nome é obrigatório. Tente novamente!");
+            }
+        } while (nome.isEmpty());
+        return nome;
     }
     private double lerDoubleNaoNegativo(String mensagem) {
         double valor;
@@ -336,8 +346,7 @@ public class UtilsColaborador {
         switch (option) {
             // Nome
             case 1:
-                System.out.println("Insira o novo nome:");
-                String nome = inputStr.nextLine();
+                String nome = lerNomeObrigatorio("Insira o novo nome:");
 
                 colaborador.put("name", nome);
                 break;
