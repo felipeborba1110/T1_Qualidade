@@ -10,6 +10,40 @@ public class UtilsColaborador {
     private final Scanner inputStr = new Scanner(System.in);
     private final Scanner inputNum = new Scanner(System.in);
 
+    
+    private int lerInt() {
+        while (true) {
+            try {
+                return inputNum.nextInt();
+            } catch (java.util.InputMismatchException e) {
+                inputNum.nextLine();
+                System.out.println("Entrada inválida. Digite apenas números:");
+            }
+        }
+    }
+
+    private double lerDouble() {
+        while (true) {
+            try {
+                return inputNum.nextDouble();
+            } catch (java.util.InputMismatchException e) {
+                inputNum.nextLine();
+                System.out.println("Entrada inválida. Digite apenas números:");
+            }
+        }
+    }
+
+    private float lerFloat() {
+        while (true) {
+            try {
+                return inputNum.nextFloat();
+            } catch (java.util.InputMismatchException e) {
+                inputNum.nextLine();
+                System.out.println("Entrada inválida. Digite apenas números:");
+            }
+        }
+    }
+
     public Colaborador criarColaborador() {
         System.out.println("------ Adicionando colaborador ------");
 
@@ -61,7 +95,7 @@ public class UtilsColaborador {
         double valor;
         do {
             System.out.println(mensagem);
-            valor = inputNum.nextDouble();
+            valor = lerDouble();
             if (valor < 0) {
                 System.out.println("O valor não pode ser negativo. Tente novamente!");
             }
@@ -72,7 +106,7 @@ public class UtilsColaborador {
         float valor;
         do {
             System.out.println(mensagem);
-            valor = inputNum.nextFloat();
+            valor = lerFloat();
             if (valor < 0) {
                 System.out.println("O valor não pode ser negativo. Tente novamente!");
             }
@@ -83,7 +117,7 @@ public class UtilsColaborador {
         int valor;
         do {
             System.out.println(mensagem);
-            valor = inputNum.nextInt();
+            valor = lerInt();
             if (valor < 0) {
                 System.out.println("O valor não pode ser negativo. Tente novamente!");
             }
@@ -97,7 +131,7 @@ public class UtilsColaborador {
                 2- Colaborador Comissionado
                 3- Colaborador Produção""");
 
-        int type = inputNum.nextInt();
+        int type = lerInt();
 
         switch (type) {
             case 1:
@@ -114,7 +148,7 @@ public class UtilsColaborador {
 
     private int validadorId() {
         System.out.println("Insira o id:");
-        int id = inputNum.nextInt();
+        int id = lerInt();
 
         if (procurarID(id) != null) {
             System.out.println("Colaborador com este id já existe, tente novamente!");
@@ -130,11 +164,11 @@ public class UtilsColaborador {
         System.out.println("1- Por ID");
         System.out.println("2- Por Nome");
 
-        int option = inputNum.nextInt();
+        int option = lerInt();
 
         if (option == 1) {
             System.out.println("Insira o ID do Colaborador:");
-            int id = inputNum.nextInt();
+            int id = lerInt();
             if (procurarID(id) == null) {
                 System.out.println("Nenhum colaborador com este id, tente novamente!");
 
@@ -299,7 +333,7 @@ public class UtilsColaborador {
     public void modificarColaborador() {
         JsonFileManager json = new JsonFileManager();
         System.out.println("Insira o ID do Colaborador:");
-        int id = inputNum.nextInt();
+        int id = lerInt();
 
         JSONObject colaborador = procurarID(id);
         if (colaborador == null) {
@@ -341,7 +375,7 @@ public class UtilsColaborador {
         }
 
         System.out.print("Opção:");
-        int option = inputNum.nextInt();
+        int option = lerInt();
 
         switch (option) {
             // Nome
@@ -467,7 +501,7 @@ public class UtilsColaborador {
         JsonFileManager json = new JsonFileManager();
 
         System.out.println("Insira o ID do Colaborador:");
-        int id = inputNum.nextInt();
+        int id = lerInt();
 
         if (procurarID(id) == null) {
             System.out.println("Nenhum colaborador com este id, tente novamente!");

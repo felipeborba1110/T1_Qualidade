@@ -5,6 +5,17 @@ public class Menu {
     private final UtilsColaborador utilsColaborador = new UtilsColaborador();
     private final Scanner input = new Scanner(System.in);
 
+    private int lerOpcao() {
+        while (true) {
+            try {
+                return input.nextInt();
+            } catch (java.util.InputMismatchException e) {
+                input.nextLine();
+                System.out.println("Entrada inválida. Digite apenas números:");
+            }
+        }
+    }
+
     public void menu(){
         System.out.println("""
         =============================
@@ -21,7 +32,7 @@ public class Menu {
         ------------------------------""");
 
         System.out.println("Digite o número da sua opção:");
-        int option = input.nextInt();
+        int option = lerOpcao();
 
         switch(option){
             case 1:
