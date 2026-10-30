@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Ana",
+    "type": "padrao",
+    "baseSalary": 3000.0,
+    "finalSalary": 3000.0
+  },
+  {
+    "id": 2,
+    "name": "Bruno",
+    "type": "comissionado",
+    "baseSalary": 2000.0,
+    "finalSalary": 2500.0,
+    "commission": 0.05,
+    "productValue": 10000.0
+  },
+  {
+    "id": 3,
+    "name": "Carla",
+    "type": "producao",
+    "baseSalary": 1800.0,
+    "finalSalary": 2050.0,
+    "prodQuant": 100,
+    "unitValue": 2.5
+  }
+]
