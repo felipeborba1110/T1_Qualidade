@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EntradaConsole.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sistema de Folha de Pagamento</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">EntradaConsole.java</span></div><h1>EntradaConsole.java</h1><pre class="source lang-java linenums">import java.io.InputStream;
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+/**
+ * Única fonte de leitura do console. Lê sempre linhas inteiras e valida cada entrada antes de
+ * devolvê-la (RNF002). Um só Scanner sobre a entrada evita a perda de dados redirecionados (BUG003).
+ */
+public class EntradaConsole {
+
+    public static final String MSG_ENTRADA_INVALIDA = &quot;Entrada inválida. Digite apenas números:&quot;;
+
+<span class="fc" id="L16">    private static final Pattern INTEIRO = Pattern.compile(&quot;-?\\d+&quot;);</span>
+<span class="fc" id="L17">    private static final Pattern DECIMAL = Pattern.compile(&quot;-?(\\d+(\\.\\d*)?|\\.\\d+)&quot;);</span>
+
+    private final Scanner scanner;
+    private final PrintStream saida;
+
+<span class="fc" id="L22">    public EntradaConsole(InputStream entrada, PrintStream saida) {</span>
+<span class="fc" id="L23">        this.scanner = new Scanner(entrada, StandardCharsets.UTF_8);</span>
+<span class="fc" id="L24">        this.saida = saida;</span>
+<span class="fc" id="L25">    }</span>
+
+    public PrintStream saida() {
+<span class="fc" id="L28">        return saida;</span>
+    }
+
+    public void exibir(String texto) {
+<span class="fc" id="L32">        saida.println(texto);</span>
+<span class="fc" id="L33">    }</span>
+
+    /** Lê a próxima linha; o fim da entrada encerra o sistema de forma controlada. */
+    public String lerLinha() {
+        try {
+<span class="fc" id="L38">            return scanner.nextLine();</span>
+<span class="fc" id="L39">        } catch (NoSuchElementException e) {</span>
+<span class="fc" id="L40">            throw new EntradaEncerradaException();</span>
+        }
+    }
+
+    public String lerTexto(String mensagem) {
+<span class="fc" id="L45">        exibir(mensagem);</span>
+<span class="fc" id="L46">        return lerLinha().trim();</span>
+    }
+
+    /** RN002: repete a pergunta até receber um nome não vazio. */
+    public String lerNomeObrigatorio(String mensagem) {
+        while (true) {
+<span class="fc" id="L52">            String nome = lerTexto(mensagem);</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">            if (ValidadorColaborador.nomeValido(nome)) {</span>
+<span class="fc" id="L54">                return nome;</span>
+            }
+<span class="fc" id="L56">            exibir(ValidadorColaborador.MSG_NOME_OBRIGATORIO);</span>
+<span class="fc" id="L57">        }</span>
+    }
+
+    public int lerInteiro(String mensagem) {
+<span class="fc" id="L61">        exibir(mensagem);</span>
+        while (true) {
+<span class="fc" id="L63">            Integer valor = interpretarInteiro(lerLinha());</span>
+<span class="fc bfc" id="L64" title="All 2 branches covered.">            if (valor != null) {</span>
+<span class="fc" id="L65">                return valor;</span>
+            }
+<span class="fc" id="L67">        }</span>
+    }
+
+    public double lerDecimal(String mensagem) {
+<span class="fc" id="L71">        exibir(mensagem);</span>
+        while (true) {
+<span class="fc" id="L73">            Double valor = interpretarDecimal(lerLinha());</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">            if (valor != null) {</span>
+<span class="fc" id="L75">                return valor;</span>
+            }
+<span class="fc" id="L77">        }</span>
+    }
+
+    /** RN003 a RN007: recusa valores negativos e solicita novamente. */
+    public double lerDecimalNaoNegativo(String mensagem) {
+        while (true) {
+<span class="fc" id="L83">            double valor = lerDecimal(mensagem);</span>
+<span class="fc bfc" id="L84" title="All 2 branches covered.">            if (ValidadorColaborador.naoNegativo(valor)) {</span>
+<span class="fc" id="L85">                return valor;</span>
+            }
+<span class="fc" id="L87">            exibir(ValidadorColaborador.MSG_VALOR_NEGATIVO);</span>
+<span class="fc" id="L88">        }</span>
+    }
+
+    public int lerInteiroNaoNegativo(String mensagem) {
+        while (true) {
+<span class="fc" id="L93">            int valor = lerInteiro(mensagem);</span>
+<span class="fc bfc" id="L94" title="All 2 branches covered.">            if (ValidadorColaborador.naoNegativo(valor)) {</span>
+<span class="fc" id="L95">                return valor;</span>
+            }
+<span class="fc" id="L97">            exibir(ValidadorColaborador.MSG_VALOR_NEGATIVO);</span>
+<span class="fc" id="L98">        }</span>
+    }
+
+    /** Retorna verdadeiro apenas para a resposta S (maiúscula ou minúscula). */
+    public boolean confirmar(String mensagem) {
+<span class="fc" id="L103">        return lerTexto(mensagem).equalsIgnoreCase(&quot;S&quot;);</span>
+    }
+
+    /**
+     * Devolve null para linha vazia (o sistema continua aguardando, sem mensagem) e exibe a mensagem de
+     * entrada inválida para texto não numérico.
+     */
+    private Integer interpretarInteiro(String linha) {
+<span class="fc" id="L111">        String texto = linha.trim();</span>
+<span class="pc bpc" id="L112" title="1 of 2 branches missed.">        if (texto.isEmpty()) {</span>
+<span class="nc" id="L113">            return null;</span>
+        }
+<span class="fc" id="L115">        Integer valor = converterInteiro(texto);</span>
+<span class="fc bfc" id="L116" title="All 2 branches covered.">        if (valor == null) {</span>
+<span class="fc" id="L117">            exibir(MSG_ENTRADA_INVALIDA);</span>
+        }
+<span class="fc" id="L119">        return valor;</span>
+    }
+
+    private Double interpretarDecimal(String linha) {
+<span class="fc" id="L123">        String texto = linha.trim();</span>
+<span class="fc bfc" id="L124" title="All 2 branches covered.">        if (texto.isEmpty()) {</span>
+<span class="fc" id="L125">            return null;</span>
+        }
+<span class="fc" id="L127">        Double valor = converterDecimal(texto);</span>
+<span class="fc bfc" id="L128" title="All 2 branches covered.">        if (valor == null) {</span>
+<span class="fc" id="L129">            exibir(MSG_ENTRADA_INVALIDA);</span>
+        }
+<span class="fc" id="L131">        return valor;</span>
+    }
+
+    static Integer converterInteiro(String texto) {
+<span class="fc bfc" id="L135" title="All 2 branches covered.">        if (!INTEIRO.matcher(texto).matches()) {</span>
+<span class="fc" id="L136">            return null;</span>
+        }
+        try {
+<span class="fc" id="L139">            return Integer.valueOf(texto);</span>
+<span class="fc" id="L140">        } catch (NumberFormatException e) {</span>
+<span class="fc" id="L141">            return null;</span>
+        }
+    }
+
+    /**
+     * Aceita vírgula ou ponto como separador decimal, independentemente do idioma do sistema (BUG005).
+     * Quando há os dois, o ponto é separador de milhar: &quot;1.234,56&quot; vira 1234.56.
+     */
+    static Double converterDecimal(String texto) {
+<span class="fc" id="L150">        String normalizado = texto.replace(&quot; &quot;, &quot;&quot;);</span>
+<span class="fc bfc" id="L151" title="All 2 branches covered.">        if (normalizado.contains(&quot;,&quot;)) {</span>
+<span class="fc" id="L152">            normalizado = normalizado.replace(&quot;.&quot;, &quot;&quot;).replace(',', '.');</span>
+        }
+<span class="fc bfc" id="L154" title="All 2 branches covered.">        if (!DECIMAL.matcher(normalizado).matches()) {</span>
+<span class="fc" id="L155">            return null;</span>
+        }
+<span class="fc" id="L157">        return Double.valueOf(normalizado);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.0000</span></div></body></html>

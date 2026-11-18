@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ColaboradorComissionado.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sistema de Folha de Pagamento</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">ColaboradorComissionado.java</span></div><h1>ColaboradorComissionado.java</h1><pre class="source lang-java linenums">import java.util.List;
+
+import org.json.simple.JSONObject;
+
+/**
+ * Colaborador que recebe comissão sobre as vendas (RF003).
+ * Comissão = valor das vendas × percentual de comissão.
+ */
+public class ColaboradorComissionado extends Colaborador {
+
+    public static final String TIPO = &quot;comissionado&quot;;
+    private static final String MSG_VENDAS = &quot;Insira o valor de venda dos produtos:&quot;;
+    private static final String MSG_COMISSAO = &quot;Insira o percentual de comissão: (0,50 = 50%)&quot;;
+
+    private double commission;
+    private double productValue;
+
+<span class="fc" id="L18">    public ColaboradorComissionado() {</span>
+<span class="fc" id="L19">    }</span>
+
+    public ColaboradorComissionado(int id, String name, double baseSalary, double productValue, double commission) {
+<span class="fc" id="L22">        super(id, name, baseSalary);</span>
+<span class="fc" id="L23">        setProductValue(productValue);</span>
+<span class="fc" id="L24">        setCommission(commission);</span>
+<span class="fc" id="L25">    }</span>
+
+    @Override
+    public String getType() {
+<span class="fc" id="L29">        return TIPO;</span>
+    }
+
+    @Override
+    public String getDescricaoTipo() {
+<span class="fc" id="L34">        return &quot;Comissionado&quot;;</span>
+    }
+
+    @Override
+    public double calcularAdicional() {
+<span class="fc" id="L39">        return Dinheiro.multiplicar(productValue, commission);</span>
+    }
+
+    @Override
+    @SuppressWarnings(&quot;unchecked&quot;)
+    protected void preencherJSON(JSONObject json) {
+<span class="fc" id="L45">        json.put(&quot;productValue&quot;, productValue);</span>
+<span class="fc" id="L46">        json.put(&quot;commission&quot;, commission);</span>
+<span class="fc" id="L47">    }</span>
+
+    @Override
+    protected void carregarJSON(JSONObject json) {
+<span class="fc" id="L51">        setProductValue(lerNumero(json, &quot;productValue&quot;));</span>
+<span class="fc" id="L52">        setCommission(lerNumero(json, &quot;commission&quot;));</span>
+<span class="fc" id="L53">    }</span>
+
+    @Override
+    public void lerDadosEspecificos(EntradaConsole entrada) {
+<span class="fc" id="L57">        setProductValue(entrada.lerDecimalNaoNegativo(MSG_VENDAS));</span>
+<span class="fc" id="L58">        setCommission(entrada.lerDecimalNaoNegativo(MSG_COMISSAO));</span>
+<span class="fc" id="L59">    }</span>
+
+    @Override
+    public List&lt;String&gt; getCamposEspecificos() {
+<span class="fc" id="L63">        return List.of(&quot;Valor do Produto&quot;, &quot;Comissão&quot;);</span>
+    }
+
+    @Override
+    public void alterarCampoEspecifico(int indice, EntradaConsole entrada) {
+<span class="pc bpc" id="L68" title="1 of 3 branches missed.">        switch (indice) {</span>
+            case 0:
+<span class="fc" id="L70">                setProductValue(entrada.lerDecimalNaoNegativo(&quot;Insira o novo valor de venda dos produtos:&quot;));</span>
+<span class="fc" id="L71">                break;</span>
+            case 1:
+<span class="fc" id="L73">                setCommission(entrada.lerDecimalNaoNegativo(&quot;Insira a nova comissão: (0,50 = 50%)&quot;));</span>
+<span class="fc" id="L74">                break;</span>
+            default:
+<span class="nc" id="L76">                super.alterarCampoEspecifico(indice, entrada);</span>
+        }
+<span class="fc" id="L78">    }</span>
+
+    @Override
+    public List&lt;String&gt; getDetalhes() {
+<span class="fc" id="L82">        return List.of(</span>
+<span class="fc" id="L83">                &quot;Valor do produto: &quot; + Dinheiro.formatar(productValue),</span>
+<span class="fc" id="L84">                &quot;Comissão: &quot; + Dinheiro.formatarPercentual(commission) + &quot; (&quot; + Dinheiro.formatar(calcularAdicional()) + &quot;)&quot;);</span>
+    }
+
+    public double getCommission() {
+<span class="fc" id="L88">        return commission;</span>
+    }
+
+    public final void setCommission(double commission) {
+<span class="fc" id="L92">        this.commission = ValidadorColaborador.validarNaoNegativo(commission, &quot;Percentual de comissão&quot;);</span>
+<span class="fc" id="L93">    }</span>
+
+    public double getProductValue() {
+<span class="fc" id="L96">        return productValue;</span>
+    }
+
+    public final void setProductValue(double productValue) {
+<span class="fc" id="L100">        this.productValue = ValidadorColaborador.validarNaoNegativo(productValue, &quot;Valor das vendas&quot;);</span>
+<span class="fc" id="L101">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.0000</span></div></body></html>

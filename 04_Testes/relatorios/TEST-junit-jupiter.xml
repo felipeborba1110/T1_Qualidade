@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="JUnit Jupiter" tests="131" skipped="0" failures="0" errors="0" time="0.674" hostname="vm" timestamp="2026-11-18T20:07:31">
+<properties>
+<property name="file.encoding" value="UTF-8"/>
+<property name="file.separator" value="/"/>
+<property name="http.nonProxyHosts" value="localhost|127.0.0.1|::1|127.*|0.*|::|169.254.*|api.anthropic.com|api-staging.anthropic.com|api-pr-preview.anthropic.com|mcp-proxy.anthropic.com|mcp-proxy-staging.anthropic.com|registry.npmjs.org|jsr.io|npm.jsr.io|pypi.org|files.pythonhosted.org|index.crates.io|proxy.golang.org|host.docker.internal|10.*|172.16.*|172.17.*|172.18.*|172.19.*|172.20.*|172.21.*|172.22.*|172.23.*|172.24.*|172.25.*|172.26.*|172.27.*|172.28.*|172.29.*|172.30.*|172.31.*|192.168.*|100.64.0.0/10|*.svc.cluster.local|*.svc.cluster.local"/>
+<property name="https.proxyHost" value="127.0.0.1"/>
+<property name="https.proxyPort" value="44643"/>
+<property name="java.class.path" value="/usr/share/java/junit-platform-console-standalone-1.9.1.jar"/>
+<property name="java.class.version" value="65.0"/>
+<property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64"/>
+<property name="java.io.tmpdir" value="/tmp"/>
+<property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+<property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+<property name="java.runtime.version" value="21.0.13.0.3+1-1-24.04.1-Ubuntu"/>
+<property name="java.specification.name" value="Java Platform API Specification"/>
+<property name="java.specification.vendor" value="Oracle Corporation"/>
+<property name="java.specification.version" value="21"/>
+<property name="java.vendor" value="Ubuntu"/>
+<property name="java.vendor.url" value="https://ubuntu.com/"/>
+<property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21"/>
+<property name="java.version" value="21.0.13.0.3"/>
+<property name="java.version.date" value="2026-10-24"/>
+<property name="java.vm.compressedOopsMode" value="32-bit"/>
+<property name="java.vm.info" value="mixed mode, sharing"/>
+<property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+<property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+<property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+<property name="java.vm.specification.version" value="21"/>
+<property name="java.vm.vendor" value="Ubuntu"/>
+<property name="java.vm.version" value="21.0.13.0.3+1-1-24.04.1-Ubuntu"/>
+<property name="javax.net.ssl.trustStore" value="/etc/ssl/certs/java/cacerts"/>
+<property name="javax.net.ssl.trustStoreType" value="JKS"/>
+<property name="jdk.debug" value="release"/>
+<property name="jdk.http.auth.proxying.disabledSchemes" value=""/>
+<property name="jdk.http.auth.tunneling.disabledSchemes" value=""/>
+<property name="line.separator" value="
+"/>
+<property name="native.encoding" value="ANSI_X3.4-1968"/>
+<property name="os.arch" value="amd64"/>
+<property name="os.name" value="Linux"/>
+<property name="os.version" value="6.18.44-fc-v595"/>
+<property name="path.separator" value=":"/>
+<property name="stderr.encoding" value="ANSI_X3.4-1968"/>
+<property name="stdout.encoding" value="UTF-8"/>
+<property name="sun.arch.data.model" value="64"/>
+<property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib"/>
+<property name="sun.cpu.endian" value="little"/>
+<property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+<property name="sun.java.command" value="/usr/share/java/junit-platform-console-standalone-1.9.1.jar --class-path /home/claude/build/classes:/home/claude/build/test-classes:/home/claude/repo/T1_Qualidade/05_Codigo_Fonte/lib/json-simple-1.1.1.jar --scan-class-path /home/claude/build/test-classes --reports-dir /home/claude/build/reports/junit --details=tree --disable-banner --disable-ansi-colors"/>
+<property name="sun.java.launcher" value="SUN_STANDARD"/>
+<property name="sun.jnu.encoding" value="ANSI_X3.4-1968"/>
+<property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+<property name="user.country" value="US"/>
+<property name="user.dir" value="/home/claude/repo/T1_Qualidade/05_Codigo_Fonte"/>
+<property name="user.home" value="/root"/>
+<property name="user.language" value="en"/>
+<property name="user.name" value="root"/>
+<property name="user.timezone" value="America/Sao_Paulo"/>
+</properties>
+<testcase name="acentuacao()" classname="PersistenciaIntegracaoTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:PersistenciaIntegracaoTest]/[method:acentuacao()]
+display-name: Nomes com acentuação são gravados e lidos em UTF-8
+]]></system-out>
+</testcase>
+<testcase name="regrasDeNegocio()" classname="CriteriosAceitacaoTest" time="0.004">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CriteriosAceitacaoTest]/[method:regrasDeNegocio()]
+display-name: RN001 a RN007 - entradas inválidas recusadas com mensagem e solicitadas novamente
+]]></system-out>
+</testcase>
+<testcase name="ct014Ct015ComissionadoNegativos()" classname="FluxosNegocioIntegracaoTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FluxosNegocioIntegracaoTest]/[method:ct014Ct015ComissionadoNegativos()]
+display-name: CT014 e CT015 - vendas e percentual negativos recusados (RN004, RN005)
+]]></system-out>
+</testcase>
+<testcase name="rn008()" classname="CriteriosAceitacaoTest" time="0.006">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CriteriosAceitacaoTest]/[method:rn008()]
+display-name: RN008 - nenhuma tela solicita o salário final
+]]></system-out>
+</testcase>
+<testcase name="falhaDeGravacao()" classname="PersistenciaIntegracaoTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:PersistenciaIntegracaoTest]/[method:falhaDeGravacao()]
+display-name: Pasta inexistente gera PersistenciaException na gravação
+]]></system-out>
+</testcase>
+<testcase name="bug001SemImprecisaoDeCentavos()" classname="CalculoSalarioTest$Comissionado" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CalculoSalarioTest]/[nested-class:Comissionado]/[method:bug001SemImprecisaoDeCentavos()]
+display-name: BUG001 - regressão: valores com centavos não perdem precisão
+]]></system-out>
+</testcase>
+<testcase name="ct008TotaisDaFolha()" classname="FolhaPagamentoTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FolhaPagamentoTest]/[method:ct008TotaisDaFolha()]
+display-name: CT008 - quantidade 3, totais por categoria e total geral de R$ 7.550,00 (RF008)
+]]></system-out>
+</testcase>
+<testcase name="rnf002DecimalInvalido(String)[8]" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[test-template:rnf002DecimalInvalido(java.lang.String)]/[test-template-invocation:#8]
+display-name: "." é inválido
+]]></system-out>
+</testcase>
+<testcase name="ct012NomeVazio()" classname="CalculoSalarioTest$RegrasNoModelo" time="0.005">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CalculoSalarioTest]/[nested-class:RegrasNoModelo]/[method:ct012NomeVazio()]
+display-name: CT012 - nome vazio é recusado pelo modelo (RN002)
+]]></system-out>
+</testcase>
+<testcase name="rnf002DecimalInvalido(String)[6]" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[test-template:rnf002DecimalInvalido(java.lang.String)]/[test-template-invocation:#6]
+display-name: "Infinity" é inválido
+]]></system-out>
+</testcase>
+<testcase name="rnf002DecimalInvalido(String)[7]" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[test-template:rnf002DecimalInvalido(java.lang.String)]/[test-template-invocation:#7]
+display-name: "--1" é inválido
+]]></system-out>
+</testcase>
+<testcase name="rnf002DecimalInvalido(String)[4]" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[test-template:rnf002DecimalInvalido(java.lang.String)]/[test-template-invocation:#4]
+display-name: "1,2,3" é inválido
+]]></system-out>
+</testcase>
+<testcase name="comissionadoAlteraCampos()" classname="CamposEspecificosTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CamposEspecificosTest]/[method:comissionadoAlteraCampos()]
+display-name: CT006 - alterar cada campo do comissionado recalcula o salário (RF006)
+]]></system-out>
+</testcase>
+<testcase name="rnf002DecimalInvalido(String)[5]" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[test-template:rnf002DecimalInvalido(java.lang.String)]/[test-template-invocation:#5]
+display-name: "NaN" é inválido
+]]></system-out>
+</testcase>
+<testcase name="confirmacao()" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[method:confirmacao()]
+display-name: Confirmação aceita somente S ou s
+]]></system-out>
+</testcase>
+<testcase name="ct006RecalculoAposAlteracao()" classname="CalculoSalarioTest$Comissionado" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CalculoSalarioTest]/[nested-class:Comissionado]/[method:ct006RecalculoAposAlteracao()]
+display-name: CT006 - salário final recalculado ao alterar as vendas para R$ 20.000,00 (RF006)
+]]></system-out>
+</testcase>
+<testcase name="particoesProducao(double, int, double, double)[2]" classname="CalculoSalarioTest$Producao" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CalculoSalarioTest]/[nested-class:Producao]/[test-template:particoesProducao(double, int, double, double)]/[test-template-invocation:#2]
+display-name: base 1800 + 100 un × 0 = 1800.00
+]]></system-out>
+</testcase>
+<testcase name="ct008ResumoDaFolha()" classname="RelatoriosIntegracaoTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:RelatoriosIntegracaoTest]/[method:ct008ResumoDaFolha()]
+display-name: CT008 - resumo com quantidade 3, totais por categoria e total geral R$ 7.550,00 (RF008)
+]]></system-out>
+</testcase>
+<testcase name="particoesProducao(double, int, double, double)[1]" classname="CalculoSalarioTest$Producao" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CalculoSalarioTest]/[nested-class:Producao]/[test-template:particoesProducao(double, int, double, double)]/[test-template-invocation:#1]
+display-name: base 1800 + 0 un × 2.50 = 1800.00
+]]></system-out>
+</testcase>
+<testcase name="particoesProducao(double, int, double, double)[4]" classname="CalculoSalarioTest$Producao" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CalculoSalarioTest]/[nested-class:Producao]/[test-template:particoesProducao(double, int, double, double)]/[test-template-invocation:#4]
+display-name: base 1000 + 333 un × 1.11 = 1369.63
+]]></system-out>
+</testcase>
+<testcase name="comissionadoLeDados()" classname="CamposEspecificosTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CamposEspecificosTest]/[method:comissionadoLeDados()]
+display-name: CT014 e CT015 - comissionado lê vendas e percentual, recusando negativos (RN004, RN005)
+]]></system-out>
+</testcase>
+<testcase name="particoesProducao(double, int, double, double)[3]" classname="CalculoSalarioTest$Producao" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CalculoSalarioTest]/[nested-class:Producao]/[test-template:particoesProducao(double, int, double, double)]/[test-template-invocation:#3]
+display-name: base 0 + 1 un × 0.01 = 0.01
+]]></system-out>
+</testcase>
+<testcase name="camposDoJson()" classname="ColaboradorFactoryTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ColaboradorFactoryTest]/[method:camposDoJson()]
+display-name: toJSON grava os campos do registro, incluindo o salário final calculado
+]]></system-out>
+</testcase>
+<testcase name="rnf002DecimalInvalido(String)[2]" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[test-template:rnf002DecimalInvalido(java.lang.String)]/[test-template-invocation:#2]
+display-name: "1a" é inválido
+]]></system-out>
+</testcase>
+<testcase name="rnf002DecimalInvalido(String)[3]" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[test-template:rnf002DecimalInvalido(java.lang.String)]/[test-template-invocation:#3]
+display-name: "R$10" é inválido
+]]></system-out>
+</testcase>
+<testcase name="ct018SalarioFinalNuncaInformado()" classname="FluxosNegocioIntegracaoTest" time="0.006">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FluxosNegocioIntegracaoTest]/[method:ct018SalarioFinalNuncaInformado()]
+display-name: CT018 - nenhuma tela pede o salário final; ele aparece calculado (RN008)
+]]></system-out>
+</testcase>
+<testcase name="rf006()" classname="CriteriosAceitacaoTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CriteriosAceitacaoTest]/[method:rf006()]
+display-name: RF006 - salário calculado (R$ 2.500,00) e recalculado após vendas = 20.000 (R$ 3.000,00)
+]]></system-out>
+</testcase>
+<testcase name="ct016QuantidadeNegativa()" classname="EntradaConsoleTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[method:ct016QuantidadeNegativa()]
+display-name: CT016 - quantidade negativa é recusada e solicitada novamente (RN006)
+]]></system-out>
+</testcase>
+<testcase name="rnf002DecimalInvalido(String)[1]" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[test-template:rnf002DecimalInvalido(java.lang.String)]/[test-template-invocation:#1]
+display-name: "abc" é inválido
+]]></system-out>
+</testcase>
+<testcase name="rf002()" classname="CriteriosAceitacaoTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CriteriosAceitacaoTest]/[method:rf002()]
+display-name: RF002 - Padrão com base R$ 3.000,00: salário final R$ 3.000,00, sem adicionais
+]]></system-out>
+</testcase>
+<testcase name="ct013NegativoDepoisZero()" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[method:ct013NegativoDepoisZero()]
+display-name: CT013 - valor negativo é recusado e solicitado novamente; zero é aceito (RN003)
+]]></system-out>
+</testcase>
+<testcase name="producaoLeDados()" classname="CamposEspecificosTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CamposEspecificosTest]/[method:producaoLeDados()]
+display-name: CT016 e CT017 - produção lê quantidade e valor por unidade, recusando negativos (RN006, RN007)
+]]></system-out>
+</testcase>
+<testcase name="horistaNoFluxoCompleto()" classname="ExtensibilidadeTest" time="0.007">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ExtensibilidadeTest]/[method:horistaNoFluxoCompleto()]
+display-name: Horista cadastrado pelo menu aparece na folha e no resumo junto dos tipos existentes
+]]></system-out>
+</testcase>
+<testcase name="ct004CalculoProducao()" classname="CalculoSalarioTest$Producao" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CalculoSalarioTest]/[nested-class:Producao]/[method:ct004CalculoProducao()]
+display-name: CT004 - produtividade de R$ 250,00 e salário final de R$ 2.050,00 (RF004)
+]]></system-out>
+</testcase>
+<testcase name="ct010Exclusao()" classname="PersistenciaIntegracaoTest" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:PersistenciaIntegracaoTest]/[method:ct010Exclusao()]
+display-name: CT010 - exclusão remove só o colaborador informado (RF009)
+]]></system-out>
+</testcase>
+<testcase name="bug002ArquivoCorrompido()" classname="PersistenciaIntegracaoTest" time="0.006">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:PersistenciaIntegracaoTest]/[method:bug002ArquivoCorrompido()]
+display-name: BUG002 - arquivo corrompido gera PersistenciaException e não é sobrescrito
+]]></system-out>
+</testcase>
+<testcase name="ct009AlteracaoDeNome()" classname="FluxosNegocioIntegracaoTest" time="0.004">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FluxosNegocioIntegracaoTest]/[method:ct009AlteracaoDeNome()]
+display-name: CT009 - nome alterado para Ana Maria permanece após reiniciar (RF009)
+]]></system-out>
+</testcase>
+<testcase name="recalculoDosDemaisCampos()" classname="FluxosNegocioIntegracaoTest" time="0.015">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FluxosNegocioIntegracaoTest]/[method:recalculoDosDemaisCampos()]
+display-name: RF006 - alterar comissão, salário base, unidade e quantidade recalcula o salário
+]]></system-out>
+</testcase>
+<testcase name="detalhes()" classname="CamposEspecificosTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CamposEspecificosTest]/[method:detalhes()]
+display-name: Detalhes exibidos na consulta de cada categoria
+]]></system-out>
+</testcase>
+<testcase name="alteracaoInvalidaPreservaDado()" classname="CalculoSalarioTest$RegrasNoModelo" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CalculoSalarioTest]/[nested-class:RegrasNoModelo]/[method:alteracaoInvalidaPreservaDado()]
+display-name: Valor inválido na alteração não muda o dado anterior
+]]></system-out>
+</testcase>
+<testcase name="producaoAlteraCampos()" classname="CamposEspecificosTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CamposEspecificosTest]/[method:producaoAlteraCampos()]
+display-name: RF006 - alterar cada campo da produção recalcula o salário
+]]></system-out>
+</testcase>
+<testcase name="ct001CadastroPeloMenu()" classname="FluxosNegocioIntegracaoTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FluxosNegocioIntegracaoTest]/[method:ct001CadastroPeloMenu()]
+display-name: CT001 - cadastro pelo menu grava o colaborador e a listagem o exibe (RF001)
+]]></system-out>
+</testcase>
+<testcase name="ct006RecalculoPeloMenu()" classname="FluxosNegocioIntegracaoTest" time="0.004">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FluxosNegocioIntegracaoTest]/[method:ct006RecalculoPeloMenu()]
+display-name: CT006 - alterar as vendas recalcula o salário final para R$ 3.000,00 (RF006)
+]]></system-out>
+</testcase>
+<testcase name="consultaComDetalhes()" classname="RelatoriosIntegracaoTest" time="0.004">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:RelatoriosIntegracaoTest]/[method:consultaComDetalhes()]
+display-name: Consulta exibe os dados específicos e o percentual com decimais (BUG007)
+]]></system-out>
+</testcase>
+<testcase name="bug004ConsultaSemCadastro()" classname="FluxosNegocioIntegracaoTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FluxosNegocioIntegracaoTest]/[method:bug004ConsultaSemCadastro()]
+display-name: BUG004 - consulta com cadastro vazio permite voltar ao menu (opção 0)
+]]></system-out>
+</testcase>
+<testcase name="ct007FolhaDePagamento()" classname="RelatoriosIntegracaoTest" time="0.004">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:RelatoriosIntegracaoTest]/[method:ct007FolhaDePagamento()]
+display-name: CT007 - folha com os três tipos, base, adicionais e salário final (RF007)
+]]></system-out>
+</testcase>
+<testcase name="ct012NomeVazio()" classname="EntradaConsoleTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[method:ct012NomeVazio()]
+display-name: CT012 - nome vazio é recusado e solicitado novamente (RN002)
+]]></system-out>
+</testcase>
+<testcase name="rf001()" classname="CriteriosAceitacaoTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CriteriosAceitacaoTest]/[method:rf001()]
+display-name: RF001 - matrícula 1, Ana, R$ 2.000,00, Padrão: gravado e exibido com os mesmos dados
+]]></system-out>
+</testcase>
+<testcase name="rf009()" classname="CriteriosAceitacaoTest" time="0.027">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CriteriosAceitacaoTest]/[method:rf009()]
+display-name: RF009 - alterar nome, excluir com S e com N, e persistência após reiniciar
+]]></system-out>
+</testcase>
+<testcase name="ct013SalarioBaseNegativo()" classname="FluxosNegocioIntegracaoTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FluxosNegocioIntegracaoTest]/[method:ct013SalarioBaseNegativo()]
+display-name: CT013 - salário base -100 recusado no cadastro e na alteração; 0 aceito (RN003)
+]]></system-out>
+</testcase>
+<testcase name="rf005()" classname="CriteriosAceitacaoTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CriteriosAceitacaoTest]/[method:rf005()]
+display-name: RF005 - consulta por matrícula, por nome, listagem e inexistente sem encerrar
+]]></system-out>
+</testcase>
+<testcase name="ct020EntradasInvalidas()" classname="FluxosNegocioIntegracaoTest" time="0.005">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FluxosNegocioIntegracaoTest]/[method:ct020EntradasInvalidas()]
+display-name: CT020 - texto, negativo e Enter vazio não encerram nem gravam dado inválido (RNF002)
+]]></system-out>
+</testcase>
+<testcase name="ct009AlteracaoPersistida()" classname="PersistenciaIntegracaoTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:PersistenciaIntegracaoTest]/[method:ct009AlteracaoPersistida()]
+display-name: CT009 - alteração gravada e mantida após reabrir (RF009)
+]]></system-out>
+</testcase>
+<testcase name="bug005ConverteDecimal(String, double)[8]" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[test-template:bug005ConverteDecimal(java.lang.String, double)]/[test-template-invocation:#8]
+display-name: "10000," = 10000
+]]></system-out>
+</testcase>
+<testcase name="ct011IdRepetido()" classname="FluxosNegocioIntegracaoTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FluxosNegocioIntegracaoTest]/[method:ct011IdRepetido()]
+display-name: CT011 - id repetido é recusado e solicitado novamente; id 4 é aceito (RN001)
+]]></system-out>
+</testcase>
+<testcase name="idaEVoltaJson()" classname="ColaboradorFactoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ColaboradorFactoryTest]/[method:idaEVoltaJson()]
+display-name: toJSON e fromJSON preservam todos os dados de cada tipo
+]]></system-out>
+</testcase>
+<testcase name="bug005ConverteDecimal(String, double)[4]" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[test-template:bug005ConverteDecimal(java.lang.String, double)]/[test-template-invocation:#4]
+display-name: "3000" = 3000
+]]></system-out>
+</testcase>
+<testcase name="bug003FimDaEntrada()" classname="EntradaConsoleTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[method:bug003FimDaEntrada()]
+display-name: BUG003 - fim da entrada gera EntradaEncerradaException em vez de erro inesperado
+]]></system-out>
+</testcase>
+<testcase name="bug005ConverteDecimal(String, double)[5]" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[test-template:bug005ConverteDecimal(java.lang.String, double)]/[test-template-invocation:#5]
+display-name: "1.234,56" = 1234.56
+]]></system-out>
+</testcase>
+<testcase name="bug002ArquivoCorrompidoNoMenu()" classname="FluxosNegocioIntegracaoTest" time="0.004">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FluxosNegocioIntegracaoTest]/[method:bug002ArquivoCorrompidoNoMenu()]
+display-name: BUG002 - data.json corrompido: o menu informa o erro, não encerra e não altera o arquivo
+]]></system-out>
+</testcase>
+<testcase name="bug005ConverteDecimal(String, double)[6]" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[test-template:bug005ConverteDecimal(java.lang.String, double)]/[test-template-invocation:#6]
+display-name: "-5" = -5
+]]></system-out>
+</testcase>
+<testcase name="bug005ConverteDecimal(String, double)[7]" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[test-template:bug005ConverteDecimal(java.lang.String, double)]/[test-template-invocation:#7]
+display-name: ",5" = 0.5
+]]></system-out>
+</testcase>
+<testcase name="bug005ConverteDecimal(String, double)[1]" classname="EntradaConsoleTest" time="0.006">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[test-template:bug005ConverteDecimal(java.lang.String, double)]/[test-template-invocation:#1]
+display-name: "0,05" = 0.05
+]]></system-out>
+</testcase>
+<testcase name="bug005ConverteDecimal(String, double)[2]" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[test-template:bug005ConverteDecimal(java.lang.String, double)]/[test-template-invocation:#2]
+display-name: "0.05" = 0.05
+]]></system-out>
+</testcase>
+<testcase name="bug005ConverteDecimal(String, double)[3]" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[test-template:bug005ConverteDecimal(java.lang.String, double)]/[test-template-invocation:#3]
+display-name: "2,50" = 2.5
+]]></system-out>
+</testcase>
+<testcase name="ct013a017NaoNegativos(double)[3]" classname="ValidadorColaboradorTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ValidadorColaboradorTest]/[test-template:ct013a017NaoNegativos(double)]/[test-template-invocation:#3]
+display-name: valor 2.5 é aceito
+]]></system-out>
+</testcase>
+<testcase name="ct016Ct017ProducaoNegativos()" classname="FluxosNegocioIntegracaoTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FluxosNegocioIntegracaoTest]/[method:ct016Ct017ProducaoNegativos()]
+display-name: CT016 e CT017 - quantidade e valor por unidade negativos recusados (RN006, RN007)
+]]></system-out>
+</testcase>
+<testcase name="ct013a017NaoNegativos(double)[4]" classname="ValidadorColaboradorTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ValidadorColaboradorTest]/[test-template:ct013a017NaoNegativos(double)]/[test-template-invocation:#4]
+display-name: valor 10000.0 é aceito
+]]></system-out>
+</testcase>
+<testcase name="ct013a017NaoNegativos(double)[1]" classname="ValidadorColaboradorTest" time="0.004">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ValidadorColaboradorTest]/[test-template:ct013a017NaoNegativos(double)]/[test-template-invocation:#1]
+display-name: valor 0.0 é aceito
+]]></system-out>
+</testcase>
+<testcase name="ct013a017NaoNegativos(double)[2]" classname="ValidadorColaboradorTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ValidadorColaboradorTest]/[test-template:ct013a017NaoNegativos(double)]/[test-template-invocation:#2]
+display-name: valor 0.01 é aceito
+]]></system-out>
+</testcase>
+<testcase name="ct011MatriculaUnica()" classname="ValidadorColaboradorTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ValidadorColaboradorTest]/[method:ct011MatriculaUnica()]
+display-name: CT011 - matrícula repetida não está disponível; matrícula nova está (RN001)
+]]></system-out>
+</testcase>
+<testcase name="rnf003()" classname="CriteriosAceitacaoTest" time="0.005">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CriteriosAceitacaoTest]/[method:rnf003()]
+display-name: RNF003 - cadastrar, sair (opção 0), abrir de novo: colaborador disponível
+]]></system-out>
+</testcase>
+<testcase name="ct013SalarioBaseZero()" classname="CalculoSalarioTest$Padrao" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CalculoSalarioTest]/[nested-class:Padrao]/[method:ct013SalarioBaseZero()]
+display-name: CT013 - salário base zero é aceito e gera salário final zero (RN003, valor-limite)
+]]></system-out>
+</testcase>
+<testcase name="particoesComissao(double, double, double, double)[1]" classname="CalculoSalarioTest$Comissionado" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CalculoSalarioTest]/[nested-class:Comissionado]/[test-template:particoesComissao(double, double, double, double)]/[test-template-invocation:#1]
+display-name: base 2000 + vendas 0 × 0.05 = 2000.00
+]]></system-out>
+</testcase>
+<testcase name="particoesComissao(double, double, double, double)[2]" classname="CalculoSalarioTest$Comissionado" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CalculoSalarioTest]/[nested-class:Comissionado]/[test-template:particoesComissao(double, double, double, double)]/[test-template-invocation:#2]
+display-name: base 2000 + vendas 10000 × 0 = 2000.00
+]]></system-out>
+</testcase>
+<testcase name="particoesComissao(double, double, double, double)[5]" classname="CalculoSalarioTest$Comissionado" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CalculoSalarioTest]/[nested-class:Comissionado]/[test-template:particoesComissao(double, double, double, double)]/[test-template-invocation:#5]
+display-name: base 0 + vendas 1234567.89 × 1 = 1234567.89
+]]></system-out>
+</testcase>
+<testcase name="particoesComissao(double, double, double, double)[3]" classname="CalculoSalarioTest$Comissionado" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CalculoSalarioTest]/[nested-class:Comissionado]/[test-template:particoesComissao(double, double, double, double)]/[test-template-invocation:#3]
+display-name: base 0 + vendas 10000 × 0.05 = 500.00
+]]></system-out>
+</testcase>
+<testcase name="particoesComissao(double, double, double, double)[4]" classname="CalculoSalarioTest$Comissionado" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CalculoSalarioTest]/[nested-class:Comissionado]/[test-template:particoesComissao(double, double, double, double)]/[test-template-invocation:#4]
+display-name: base 1500.50 + vendas 3333.33 × 0.03 = 1600.50
+]]></system-out>
+</testcase>
+<testcase name="arquivoInexistenteOuVazio()" classname="PersistenciaIntegracaoTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:PersistenciaIntegracaoTest]/[method:arquivoInexistenteOuVazio()]
+display-name: Arquivo inexistente ou vazio equivale a lista vazia
+]]></system-out>
+</testcase>
+<testcase name="ct010ExclusaoComConfirmacao()" classname="FluxosNegocioIntegracaoTest" time="0.009">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FluxosNegocioIntegracaoTest]/[method:ct010ExclusaoComConfirmacao()]
+display-name: CT010 - exclusão com S remove; com N mantém (RF009)
+]]></system-out>
+</testcase>
+<testcase name="alteracaoDeTipo()" classname="FluxosNegocioIntegracaoTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FluxosNegocioIntegracaoTest]/[method:alteracaoDeTipo()]
+display-name: RF009 - alterar o tipo de padrão para produção pede os novos dados e recalcula
+]]></system-out>
+</testcase>
+<testcase name="ct020TextoNoCampoNumerico()" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[method:ct020TextoNoCampoNumerico()]
+display-name: CT020 - texto exibe mensagem e a entrada é solicitada novamente
+]]></system-out>
+</testcase>
+<testcase name="registrosInvalidos()" classname="ColaboradorFactoryTest" time="0.007">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ColaboradorFactoryTest]/[method:registrosInvalidos()]
+display-name: Registro sem tipo, com tipo desconhecido ou sem campo obrigatório é recusado
+]]></system-out>
+</testcase>
+<testcase name="bug006OpcaoInexistenteParaOTipo()" classname="FluxosNegocioIntegracaoTest" time="0.006">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FluxosNegocioIntegracaoTest]/[method:bug006OpcaoInexistenteParaOTipo()]
+display-name: BUG006 - opção de alteração que não existe para o tipo é recusada
+]]></system-out>
+</testcase>
+<testcase name="padraoSemCamposEspecificos()" classname="ColaboradorFactoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ColaboradorFactoryTest]/[method:padraoSemCamposEspecificos()]
+display-name: Tipo base não oferece campos específicos para alteração
+]]></system-out>
+</testcase>
+<testcase name="ct013a017Negativos(double)[5]" classname="ValidadorColaboradorTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ValidadorColaboradorTest]/[test-template:ct013a017Negativos(double)]/[test-template-invocation:#5]
+display-name: valor -1000.0 é recusado
+]]></system-out>
+</testcase>
+<testcase name="bug003FimDaEntrada()" classname="FluxosNegocioIntegracaoTest" time="0.004">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FluxosNegocioIntegracaoTest]/[method:bug003FimDaEntrada()]
+display-name: BUG003 - fim da entrada redirecionada encerra o sistema sem exceção
+]]></system-out>
+</testcase>
+<testcase name="ct013a017Negativos(double)[4]" classname="ValidadorColaboradorTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ValidadorColaboradorTest]/[test-template:ct013a017Negativos(double)]/[test-template-invocation:#4]
+display-name: valor -100.0 é recusado
+]]></system-out>
+</testcase>
+<testcase name="ct013a017Negativos(double)[3]" classname="ValidadorColaboradorTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ValidadorColaboradorTest]/[test-template:ct013a017Negativos(double)]/[test-template-invocation:#3]
+display-name: valor -2.5 é recusado
+]]></system-out>
+</testcase>
+<testcase name="rf008()" classname="CriteriosAceitacaoTest" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CriteriosAceitacaoTest]/[method:rf008()]
+display-name: RF008 - quantidade 3, total por categoria e total geral de R$ 7.550,00
+]]></system-out>
+</testcase>
+<testcase name="ct013a017Negativos(double)[2]" classname="ValidadorColaboradorTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ValidadorColaboradorTest]/[test-template:ct013a017Negativos(double)]/[test-template-invocation:#2]
+display-name: valor -1.0 é recusado
+]]></system-out>
+</testcase>
+<testcase name="ct013a017Negativos(double)[1]" classname="ValidadorColaboradorTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ValidadorColaboradorTest]/[test-template:ct013a017Negativos(double)]/[test-template-invocation:#1]
+display-name: valor -0.01 é recusado
+]]></system-out>
+</testcase>
+<testcase name="ct005Consultas()" classname="FluxosNegocioIntegracaoTest" time="0.016">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FluxosNegocioIntegracaoTest]/[method:ct005Consultas()]
+display-name: CT005 - consulta por id, por nome, listagem geral e id inexistente (RF005)
+]]></system-out>
+</testcase>
+<testcase name="rf004()" classname="CriteriosAceitacaoTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CriteriosAceitacaoTest]/[method:rf004()]
+display-name: RF004 - base 1.800, 100 un a 2,50: produtividade R$ 250,00 e final R$ 2.050,00
+]]></system-out>
+</testcase>
+<testcase name="ct012NomeInvalido(String)[5]" classname="ValidadorColaboradorTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ValidadorColaboradorTest]/[test-template:ct012NomeInvalido(java.lang.String)]/[test-template-invocation:#5]
+display-name: nome inválido: "	"
+]]></system-out>
+</testcase>
+<testcase name="opcoesInexistentes()" classname="FluxosNegocioIntegracaoTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FluxosNegocioIntegracaoTest]/[method:opcoesInexistentes()]
+display-name: Opção inexistente no menu principal e no tipo é informada sem encerrar
+]]></system-out>
+</testcase>
+<testcase name="ct012NomeInvalido(String)[4]" classname="ValidadorColaboradorTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ValidadorColaboradorTest]/[test-template:ct012NomeInvalido(java.lang.String)]/[test-template-invocation:#4]
+display-name: nome inválido: "   "
+]]></system-out>
+</testcase>
+<testcase name="rnf002InteiroInvalido(String)[1]" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[test-template:rnf002InteiroInvalido(java.lang.String)]/[test-template-invocation:#1]
+display-name: "abc" é inválido
+]]></system-out>
+</testcase>
+<testcase name="rnf002InteiroInvalido(String)[2]" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[test-template:rnf002InteiroInvalido(java.lang.String)]/[test-template-invocation:#2]
+display-name: "1.5" é inválido
+]]></system-out>
+</testcase>
+<testcase name="ct012NomeInvalido(String)[1]" classname="ValidadorColaboradorTest" time="0.019">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ValidadorColaboradorTest]/[test-template:ct012NomeInvalido(java.lang.String)]/[test-template-invocation:#1]
+display-name: nome inválido: "null"
+]]></system-out>
+</testcase>
+<testcase name="ct012NomeInvalido(String)[3]" classname="ValidadorColaboradorTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ValidadorColaboradorTest]/[test-template:ct012NomeInvalido(java.lang.String)]/[test-template-invocation:#3]
+display-name: nome inválido: " "
+]]></system-out>
+</testcase>
+<testcase name="ct012NomeInvalido(String)[2]" classname="ValidadorColaboradorTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ValidadorColaboradorTest]/[test-template:ct012NomeInvalido(java.lang.String)]/[test-template-invocation:#2]
+display-name: nome inválido: ""
+]]></system-out>
+</testcase>
+<testcase name="cadastroVazio()" classname="FluxosNegocioIntegracaoTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FluxosNegocioIntegracaoTest]/[method:cadastroVazio()]
+display-name: Listagem e relatório com cadastro vazio exibem aviso
+]]></system-out>
+</testcase>
+<testcase name="rnf002()" classname="CriteriosAceitacaoTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CriteriosAceitacaoTest]/[method:rnf002()]
+display-name: RNF002 - texto, negativo e campo vazio não encerram o sistema nem geram cálculo
+]]></system-out>
+</testcase>
+<testcase name="rnf002InteiroInvalido(String)[5]" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[test-template:rnf002InteiroInvalido(java.lang.String)]/[test-template-invocation:#5]
+display-name: " " é inválido
+]]></system-out>
+</testcase>
+<testcase name="alterarExcluirInexistente()" classname="FluxosNegocioIntegracaoTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FluxosNegocioIntegracaoTest]/[method:alterarExcluirInexistente()]
+display-name: Alterar ou excluir matrícula inexistente informa o erro e volta ao menu
+]]></system-out>
+</testcase>
+<testcase name="ct011MatriculaRepetida()" classname="PersistenciaIntegracaoTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:PersistenciaIntegracaoTest]/[method:ct011MatriculaRepetida()]
+display-name: CT011 - a persistência recusa matrícula repetida (RN001)
+]]></system-out>
+</testcase>
+<testcase name="rnf002InteiroInvalido(String)[3]" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[test-template:rnf002InteiroInvalido(java.lang.String)]/[test-template-invocation:#3]
+display-name: "2,0" é inválido
+]]></system-out>
+</testcase>
+<testcase name="rnf002InteiroInvalido(String)[4]" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[test-template:rnf002InteiroInvalido(java.lang.String)]/[test-template-invocation:#4]
+display-name: "99999999999" é inválido
+]]></system-out>
+</testcase>
+<testcase name="ct012NomeVazio()" classname="FluxosNegocioIntegracaoTest" time="0.064">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FluxosNegocioIntegracaoTest]/[method:ct012NomeVazio()]
+display-name: CT012 - nome vazio recusado no cadastro e na alteração (RN002)
+]]></system-out>
+</testcase>
+<testcase name="buscaPorNome()" classname="PersistenciaIntegracaoTest" time="0.004">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:PersistenciaIntegracaoTest]/[method:buscaPorNome()]
+display-name: Consulta por nome ignora maiúsculas e espaços nas pontas (RF005)
+]]></system-out>
+</testcase>
+<testcase name="ct012NomeValido()" classname="ValidadorColaboradorTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ValidadorColaboradorTest]/[method:ct012NomeValido()]
+display-name: CT012 - nome válido é aceito sem espaços nas pontas (RN002)
+]]></system-out>
+</testcase>
+<testcase name="ct003CalculoComissao()" classname="CalculoSalarioTest$Comissionado" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CalculoSalarioTest]/[nested-class:Comissionado]/[method:ct003CalculoComissao()]
+display-name: CT003 - comissão de R$ 500,00 e salário final de R$ 2.500,00 (RF003)
+]]></system-out>
+</testcase>
+<testcase name="ct005NomeInexistente()" classname="FluxosNegocioIntegracaoTest" time="0.004">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FluxosNegocioIntegracaoTest]/[method:ct005NomeInexistente()]
+display-name: CT005 - nome inexistente informa e permite nova busca
+]]></system-out>
+</testcase>
+<testcase name="ct013a017ValoresNegativos()" classname="CalculoSalarioTest$RegrasNoModelo" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CalculoSalarioTest]/[nested-class:RegrasNoModelo]/[method:ct013a017ValoresNegativos()]
+display-name: CT013 a CT017 - valores negativos são recusados pelo modelo (RN003 a RN007)
+]]></system-out>
+</testcase>
+<testcase name="ct007RelatorioDetalhado()" classname="FolhaPagamentoTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FolhaPagamentoTest]/[method:ct007RelatorioDetalhado()]
+display-name: CT007 - relatório lista base, adicionais e salário final de cada colaborador (RF007)
+]]></system-out>
+</testcase>
+<testcase name="ct021DadosPermanecem()" classname="PersistenciaIntegracaoTest" time="0.009">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:PersistenciaIntegracaoTest]/[method:ct021DadosPermanecem()]
+display-name: CT021 - dados permanecem após encerrar e reabrir (nova instância lê o mesmo arquivo) (RNF003)
+]]></system-out>
+</testcase>
+<testcase name="formatacao()" classname="FolhaPagamentoTest" time="0.007">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FolhaPagamentoTest]/[method:formatacao()]
+display-name: Formatação monetária e percentual no padrão brasileiro (BUG007)
+]]></system-out>
+</testcase>
+<testcase name="listaImutavel()" classname="FolhaPagamentoTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FolhaPagamentoTest]/[method:listaImutavel()]
+display-name: A lista da folha não pode ser alterada por fora
+]]></system-out>
+</testcase>
+<testcase name="compatibilidadeComArquivoAnterior()" classname="PersistenciaIntegracaoTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:PersistenciaIntegracaoTest]/[method:compatibilidadeComArquivoAnterior()]
+display-name: Arquivo gravado pela versão anterior (06_Banco_Dados/data.exemplo.json) continua legível
+]]></system-out>
+</testcase>
+<testcase name="rn008SalarioFinalRecalculado()" classname="ColaboradorFactoryTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ColaboradorFactoryTest]/[method:rn008SalarioFinalRecalculado()]
+display-name: RN008 - salário final gravado no arquivo é ignorado e recalculado
+]]></system-out>
+</testcase>
+<testcase name="rf007()" classname="CriteriosAceitacaoTest" time="0.005">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CriteriosAceitacaoTest]/[method:rf007()]
+display-name: RF007 - folha com os três tipos, cada um com base, adicionais e final
+]]></system-out>
+</testcase>
+<testcase name="ct020EnterSemDado()" classname="EntradaConsoleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:EntradaConsoleTest]/[method:ct020EnterSemDado()]
+display-name: CT020 - Enter sem dado: o sistema continua aguardando, sem mensagem de erro
+]]></system-out>
+</testcase>
+<testcase name="tiposRegistrados()" classname="ColaboradorFactoryTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:ColaboradorFactoryTest]/[method:tiposRegistrados()]
+display-name: Tipos registrados na ordem do menu: padrão, comissionado e produção
+]]></system-out>
+</testcase>
+<testcase name="rf003()" classname="CriteriosAceitacaoTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CriteriosAceitacaoTest]/[method:rf003()]
+display-name: RF003 - base 2.000, vendas 10.000, 0,05: comissão R$ 500,00 e final R$ 2.500,00
+]]></system-out>
+</testcase>
+<testcase name="ct001GravaELe()" classname="PersistenciaIntegracaoTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:PersistenciaIntegracaoTest]/[method:ct001GravaELe()]
+display-name: CT001 - colaborador gravado no data.json e lido com os mesmos dados (RF001)
+]]></system-out>
+</testcase>
+<testcase name="recalculoProducao()" classname="CalculoSalarioTest$Producao" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CalculoSalarioTest]/[nested-class:Producao]/[method:recalculoProducao()]
+display-name: RF006 - salário recalculado ao alterar quantidade e valor por unidade
+]]></system-out>
+</testcase>
+<testcase name="folhaVazia()" classname="FolhaPagamentoTest" time="0.022">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FolhaPagamentoTest]/[method:folhaVazia()]
+display-name: Folha vazia: quantidade zero, totais zerados e aviso no relatório
+]]></system-out>
+</testcase>
+<testcase name="conteudoInesperado()" classname="PersistenciaIntegracaoTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:PersistenciaIntegracaoTest]/[method:conteudoInesperado()]
+display-name: JSON que não é lista ou com registro inválido gera PersistenciaException
+]]></system-out>
+</testcase>
+<testcase name="atualizarInexistente()" classname="PersistenciaIntegracaoTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:PersistenciaIntegracaoTest]/[method:atualizarInexistente()]
+display-name: Atualizar matrícula inexistente é recusado
+]]></system-out>
+</testcase>
+<testcase name="ct002SalarioFinalIgualAoBase()" classname="CalculoSalarioTest$Padrao" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:CalculoSalarioTest]/[nested-class:Padrao]/[method:ct002SalarioFinalIgualAoBase()]
+display-name: CT002 - salário final igual ao salário base (RF002)
+]]></system-out>
+</testcase>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]
+display-name: JUnit Jupiter
+]]></system-out>
+</testsuite>

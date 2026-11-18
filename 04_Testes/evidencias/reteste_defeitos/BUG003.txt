@@ -1,0 +1,29 @@
+Cenário: BUG003 (reteste) - entrada redirecionada (pipe): 1,1,Ana,3000,1,6,0
+Comando: printf '1\n1\nAna\n3000\n1\n6\n0\n' | java -jar folha-pagamento.jar
+Resultado esperado: colaborador cadastrado e listado, sistema encerra normalmente
+--- saída (trecho final) ---
+Digite o número da sua opção:
+*** Lista de Colaboradores ***
+ID: 1
+Nome: Ana
+Salário Base: R$ 3.000,00
+Tipo: Padrão
+Salário Final: R$ 3.000,00
+------------------------------
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+Sistema encerrado.
+--- data.json ---
+[{"finalSalary":3000.0,"name":"Ana","baseSalary":3000.0,"id":1,"type":"padrao"}]
+Situação: APROVADO

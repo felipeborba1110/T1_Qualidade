@@ -1,0 +1,259 @@
+Cenário: AC-RF009 - Alterar, excluir (S e N) e persistir
+Requisito: RF009 / CT009 / CT010
+Resultado esperado: Nome alterado; id 3 removido com S; id 2 mantido com N; mudanças mantidas após reiniciar
+Executável: 07_Executavel/folha-pagamento.jar | Data: 18/11/2026
+Comando: java -jar folha-pagamento.jar (data.json limpo antes do cenário)
+
+=============== EXECUÇÃO 1 DO SISTEMA ===============
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+1
+------ Adicionando colaborador ------
+Insira o id:
+1
+Insira o nome:
+Ana
+Insira o salário base:
+3000
+Insira o tipo pelo número:
+1- Colaborador Padrão
+2- Colaborador Comissionado
+3- Colaborador Produção
+1
+Colaborador criado com sucesso
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+1
+------ Adicionando colaborador ------
+Insira o id:
+2
+Insira o nome:
+Bruno
+Insira o salário base:
+2000
+Insira o tipo pelo número:
+1- Colaborador Padrão
+2- Colaborador Comissionado
+3- Colaborador Produção
+2
+Insira o valor de venda dos produtos:
+10000
+Insira o percentual de comissão: (0,50 = 50%)
+0,05
+Colaborador criado com sucesso
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+1
+------ Adicionando colaborador ------
+Insira o id:
+3
+Insira o nome:
+Carla
+Insira o salário base:
+1800
+Insira o tipo pelo número:
+1- Colaborador Padrão
+2- Colaborador Comissionado
+3- Colaborador Produção
+3
+Insira a quantidade produzida:
+100
+Insira o valor de cada unidade:
+2,50
+Colaborador criado com sucesso
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+5
+Insira o ID do Colaborador:
+1
+------ Colaborador Encontrado -----
+ID: 1
+Nome: Ana
+Salário Base: R$ 3.000,00
+Tipo: Padrão
+Salário Final: R$ 3.000,00
+------------------------------
+Qual informação deseja alterar?
+1- Nome
+2- Salário Base
+3- Tipo
+Opção:
+1
+Insira o novo nome:
+Ana Maria
+Colaborador modificado com sucesso!
+------ Dados atualizados -----
+ID: 1
+Nome: Ana Maria
+Salário Base: R$ 3.000,00
+Tipo: Padrão
+Salário Final: R$ 3.000,00
+------------------------------
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+7
+Insira o ID do Colaborador:
+3
+------ Colaborador Encontrado -----
+ID: 3
+Nome: Carla
+Salário Base: R$ 1.800,00
+Tipo: Produção
+Salário Final: R$ 2.050,00
+Valor da Unidade: R$ 2,50
+Quantidade de Unidades: 100
+Produtividade: R$ 250,00
+------------------------------
+Realmente deseja excluir este colaborador? <S/N>
+S
+Colaborador removido com sucesso
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+7
+Insira o ID do Colaborador:
+2
+------ Colaborador Encontrado -----
+ID: 2
+Nome: Bruno
+Salário Base: R$ 2.000,00
+Tipo: Comissionado
+Salário Final: R$ 2.500,00
+Valor do produto: R$ 10.000,00
+Comissão: 5% (R$ 500,00)
+------------------------------
+Realmente deseja excluir este colaborador? <S/N>
+N
+Retornando ao menu...
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+0
+Sistema encerrado.
+
+=============== EXECUÇÃO 2 DO SISTEMA ===============
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+6
+*** Lista de Colaboradores ***
+ID: 1
+Nome: Ana Maria
+Salário Base: R$ 3.000,00
+Tipo: Padrão
+Salário Final: R$ 3.000,00
+------------------------------
+ID: 2
+Nome: Bruno
+Salário Base: R$ 2.000,00
+Tipo: Comissionado
+Salário Final: R$ 2.500,00
+Valor do produto: R$ 10.000,00
+Comissão: 5% (R$ 500,00)
+------------------------------
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+0
+Sistema encerrado.
+
+=============== CONTEÚDO FINAL DO data.json ===============
+[{"finalSalary":3000.0,"name":"Ana Maria","baseSalary":3000.0,"id":1,"type":"padrao"},{"productValue":10000.0,"finalSalary":2500.0,"name":"Bruno","baseSalary":2000.0,"commission":0.05,"id":2,"type":"comissionado"}]
+
+Resultado obtido: Após reiniciar a listagem exibe Ana Maria e Bruno; Carla removida; Bruno mantido com N
+Situação: APROVADO

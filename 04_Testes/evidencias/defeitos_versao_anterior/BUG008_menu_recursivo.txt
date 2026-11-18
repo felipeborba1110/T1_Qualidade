@@ -1,0 +1,11 @@
+Cenário: BUG008 - menu recursivo. Entrada: 200.000 opções inválidas (9) seguidas de 0, via redirecionamento.
+Versão: código original (commit d2c5a11)
+--- últimas linhas da saída ---
+Exception in thread "main" java.lang.StackOverflowError
+	at java.base/java.util.regex.Pattern$GroupTail.match(Pattern.java:5000)
+	at java.base/java.util.regex.Pattern$GroupTail.match(Pattern.java:5000)
+	at java.base/java.util.regex.Pattern$GroupTail.match(Pattern.java:5000)
+	at java.base/java.util.regex.Pattern$GroupTail.match(Pattern.java:5000)
+	at java.base/java.util.regex.Pattern$BranchConn.match(Pattern.java:4878)
+	at java.base/java.util.regex.Pattern$GroupTail.match(Pattern.java:5000)
+(Dos 1.024 quadros de pilha exibidos pela JVM, 1.001 são "at Menu.menu(Menu.java:71)": cada opção chama menu() de novo até estourar a pilha.)

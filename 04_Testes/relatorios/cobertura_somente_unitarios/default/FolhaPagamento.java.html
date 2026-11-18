@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FolhaPagamento.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sistema de Folha de Pagamento</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">FolhaPagamento.java</span></div><h1>FolhaPagamento.java</h1><pre class="source lang-java linenums">import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Folha de pagamento consolidada: relatório detalhado (RF007) e resumo com totais (RF008).
+ * Os totais vêm de chamadas polimórficas, sem tratamento específico por tipo (RNF004).
+ */
+public class FolhaPagamento {
+
+    public static final String SEPARADOR = &quot;------------------------------&quot;;
+
+    private final List&lt;Colaborador&gt; colaboradores;
+
+<span class="fc" id="L17">    public FolhaPagamento(List&lt;Colaborador&gt; colaboradores) {</span>
+<span class="fc" id="L18">        this.colaboradores = new ArrayList&lt;&gt;(colaboradores);</span>
+<span class="fc" id="L19">    }</span>
+
+    public List&lt;Colaborador&gt; getColaboradores() {
+<span class="fc" id="L22">        return Collections.unmodifiableList(colaboradores);</span>
+    }
+
+    public int getQuantidade() {
+<span class="fc" id="L26">        return colaboradores.size();</span>
+    }
+
+    public double getTotalGeral() {
+<span class="fc" id="L30">        double total = 0;</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        for (Colaborador colaborador : colaboradores) {</span>
+<span class="fc" id="L32">            total = Dinheiro.somar(total, colaborador.calcularSalarioFinal());</span>
+<span class="fc" id="L33">        }</span>
+<span class="fc" id="L34">        return total;</span>
+    }
+
+    /** Total por código de tipo, com todos os tipos registrados (zero quando não há colaborador). */
+    public Map&lt;String, Double&gt; getTotalPorTipo() {
+<span class="fc" id="L39">        Map&lt;String, Double&gt; totais = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        for (ColaboradorFactory.TipoColaborador tipo : ColaboradorFactory.tiposRegistrados()) {</span>
+<span class="fc" id="L41">            totais.put(tipo.getCodigo(), 0.0);</span>
+<span class="fc" id="L42">        }</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        for (Colaborador colaborador : colaboradores) {</span>
+<span class="fc" id="L44">            double atual = totais.getOrDefault(colaborador.getType(), 0.0);</span>
+<span class="fc" id="L45">            totais.put(colaborador.getType(), Dinheiro.somar(atual, colaborador.calcularSalarioFinal()));</span>
+<span class="fc" id="L46">        }</span>
+<span class="fc" id="L47">        return totais;</span>
+    }
+
+    public String gerarRelatorio() {
+<span class="fc" id="L51">        StringBuilder texto = new StringBuilder(&quot;*** Relatório de Folha de Pagamentos ***\n&quot;);</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        if (colaboradores.isEmpty()) {</span>
+<span class="fc" id="L53">            texto.append(&quot;Nenhum colaborador cadastrado.\n&quot;);</span>
+        }
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        for (Colaborador colaborador : colaboradores) {</span>
+<span class="fc" id="L56">            texto.append(&quot;ID: &quot;).append(colaborador.getId()).append('\n')</span>
+<span class="fc" id="L57">                    .append(&quot;Nome: &quot;).append(colaborador.getName()).append('\n')</span>
+<span class="fc" id="L58">                    .append(&quot;Tipo: &quot;).append(colaborador.getDescricaoTipo()).append('\n')</span>
+<span class="fc" id="L59">                    .append(&quot;Salário Base: &quot;).append(Dinheiro.formatar(colaborador.getBaseSalary())).append('\n')</span>
+<span class="fc" id="L60">                    .append(&quot;Adicionais: &quot;).append(Dinheiro.formatar(colaborador.calcularAdicional())).append('\n')</span>
+<span class="fc" id="L61">                    .append(&quot;Salário Final: &quot;).append(Dinheiro.formatar(colaborador.calcularSalarioFinal())).append('\n')</span>
+<span class="fc" id="L62">                    .append(SEPARADOR).append('\n');</span>
+<span class="fc" id="L63">        }</span>
+<span class="fc" id="L64">        return texto.toString();</span>
+    }
+
+    public String gerarResumo() {
+<span class="fc" id="L68">        StringBuilder texto = new StringBuilder(&quot;*** Resumo da Folha de Pagamentos ***\n&quot;);</span>
+<span class="fc" id="L69">        texto.append(&quot;Quantidade de colaboradores: &quot;).append(getQuantidade()).append('\n');</span>
+<span class="fc" id="L70">        Map&lt;String, Double&gt; totais = getTotalPorTipo();</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">        for (ColaboradorFactory.TipoColaborador tipo : ColaboradorFactory.tiposRegistrados()) {</span>
+<span class="fc" id="L72">            texto.append(&quot;Total de Pagamento para &quot;).append(tipo.getDescricao()).append(&quot;: &quot;)</span>
+<span class="fc" id="L73">                    .append(Dinheiro.formatar(totais.get(tipo.getCodigo()))).append('\n');</span>
+<span class="fc" id="L74">        }</span>
+<span class="fc" id="L75">        texto.append(&quot;Total da Folha de Pagamentos: &quot;).append(Dinheiro.formatar(getTotalGeral())).append('\n')</span>
+<span class="fc" id="L76">                .append(SEPARADOR).append('\n');</span>
+<span class="fc" id="L77">        return texto.toString();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.0000</span></div></body></html>

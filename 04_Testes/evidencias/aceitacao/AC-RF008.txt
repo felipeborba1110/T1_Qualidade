@@ -1,0 +1,138 @@
+Cenário: AC-RF008 - Resumo da folha
+Requisito: RF008 / CT008
+Resultado esperado: Quantidade 3; totais por categoria; total geral R$ 7.550,00
+Executável: 07_Executavel/folha-pagamento.jar | Data: 18/11/2026
+Comando: java -jar folha-pagamento.jar (data.json limpo antes do cenário)
+
+=============== EXECUÇÃO 1 DO SISTEMA ===============
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+1
+------ Adicionando colaborador ------
+Insira o id:
+1
+Insira o nome:
+Ana
+Insira o salário base:
+3000
+Insira o tipo pelo número:
+1- Colaborador Padrão
+2- Colaborador Comissionado
+3- Colaborador Produção
+1
+Colaborador criado com sucesso
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+1
+------ Adicionando colaborador ------
+Insira o id:
+2
+Insira o nome:
+Bruno
+Insira o salário base:
+2000
+Insira o tipo pelo número:
+1- Colaborador Padrão
+2- Colaborador Comissionado
+3- Colaborador Produção
+2
+Insira o valor de venda dos produtos:
+10000
+Insira o percentual de comissão: (0,50 = 50%)
+0,05
+Colaborador criado com sucesso
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+1
+------ Adicionando colaborador ------
+Insira o id:
+3
+Insira o nome:
+Carla
+Insira o salário base:
+1800
+Insira o tipo pelo número:
+1- Colaborador Padrão
+2- Colaborador Comissionado
+3- Colaborador Produção
+3
+Insira a quantidade produzida:
+100
+Insira o valor de cada unidade:
+2,50
+Colaborador criado com sucesso
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+4
+*** Resumo da Folha de Pagamentos ***
+Quantidade de colaboradores: 3
+Total de Pagamento para Colaborador Padrão: R$ 3.000,00
+Total de Pagamento para Colaborador Comissionado: R$ 2.500,00
+Total de Pagamento para Colaborador Produção: R$ 2.050,00
+Total da Folha de Pagamentos: R$ 7.550,00
+------------------------------
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+0
+Sistema encerrado.
+
+=============== CONTEÚDO FINAL DO data.json ===============
+[{"finalSalary":3000.0,"name":"Ana","baseSalary":3000.0,"id":1,"type":"padrao"},{"productValue":10000.0,"finalSalary":2500.0,"name":"Bruno","baseSalary":2000.0,"commission":0.05,"id":2,"type":"comissionado"},{"finalSalary":2050.0,"prodQuant":100,"name":"Carla","baseSalary":1800.0,"id":3,"type":"producao","unitValue":2.5}]
+
+Resultado obtido: Exibido conforme esperado: Quantidade de colaboradores: 3; Colaborador Padrão: R$ 3.000,00; Colaborador Comissionado: R$ 2.500,00; Colaborador Produção: R$ 2.050,00; Total da Folha de Pagamentos: R$ 7.550,00
+Situação: APROVADO

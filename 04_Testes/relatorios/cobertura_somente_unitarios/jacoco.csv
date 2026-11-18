@@ -1,0 +1,17 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Sistema de Folha de Pagamento,default,ColaboradorPadrao,0,15,0,0,0,7,0,5,0,5
+Sistema de Folha de Pagamento,default,EntradaEncerradaException,0,4,0,0,0,2,0,1,0,1
+Sistema de Folha de Pagamento,default,PersistenciaException,9,0,0,0,4,0,2,0,2,0
+Sistema de Folha de Pagamento,default,ColaboradorFactory,5,94,0,6,2,22,1,8,1,5
+Sistema de Folha de Pagamento,default,FolhaPagamento,0,236,0,12,0,42,0,13,0,7
+Sistema de Folha de Pagamento,default,ColaboradorComissionado,4,112,1,2,1,34,1,16,0,15
+Sistema de Folha de Pagamento,default,Colaborador,1,120,0,2,1,35,1,18,1,17
+Sistema de Folha de Pagamento,default,UtilsColaborador,486,0,38,0,112,0,30,0,11,0
+Sistema de Folha de Pagamento,default,ColaboradorFactory.TipoColaborador,0,23,0,0,0,8,0,4,0,4
+Sistema de Folha de Pagamento,default,ColaboradorProducao,4,116,1,2,1,34,1,16,0,15
+Sistema de Folha de Pagamento,default,EntradaConsole,8,186,2,22,3,62,3,25,1,15
+Sistema de Folha de Pagamento,default,JsonFileManager,309,0,30,0,70,0,28,0,13,0
+Sistema de Folha de Pagamento,default,Menu,106,0,11,0,39,0,12,0,3,0
+Sistema de Folha de Pagamento,default,Dinheiro,0,57,0,0,0,8,0,6,0,6
+Sistema de Folha de Pagamento,default,Main,26,0,0,0,5,0,2,0,2,0
+Sistema de Folha de Pagamento,default,ValidadorColaborador,0,59,0,14,0,13,0,12,0,5

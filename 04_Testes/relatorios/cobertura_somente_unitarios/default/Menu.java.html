@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Menu.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sistema de Folha de Pagamento</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Menu.java</span></div><h1>Menu.java</h1><pre class="source lang-java linenums">/**
+ * Menu principal. Usa um laço em vez de recursão (BUG008) e trata falhas do arquivo de dados sem
+ * encerrar o sistema (BUG002).
+ */
+public class Menu {
+
+    public static final String OPCOES = &quot;&quot;&quot;
+            =============================
+                        MENU
+            =============================
+            1- Criar Colaborador
+            2- Consultar Colaborador
+            3- Relatórios de Folha de Pagamento
+            4- Resumo da Folha de Pagamentos
+            5- Modificar Colaborador
+            6- Mostrar todos Colaboradores
+            7- Deletar Colaborador
+            0- Sair
+            ------------------------------&quot;&quot;&quot;;
+
+    private final EntradaConsole entrada;
+    private final JsonFileManager dados;
+    private final UtilsColaborador utilsColaborador;
+
+<span class="nc" id="L25">    public Menu(EntradaConsole entrada, JsonFileManager dados) {</span>
+<span class="nc" id="L26">        this.entrada = entrada;</span>
+<span class="nc" id="L27">        this.dados = dados;</span>
+<span class="nc" id="L28">        this.utilsColaborador = new UtilsColaborador(entrada, dados);</span>
+<span class="nc" id="L29">    }</span>
+
+    public void menu() {
+        try {
+<span class="nc" id="L33">            boolean continuar = true;</span>
+<span class="nc bnc" id="L34" title="All 2 branches missed.">            while (continuar) {</span>
+<span class="nc" id="L35">                entrada.exibir(OPCOES);</span>
+<span class="nc" id="L36">                int opcao = entrada.lerInteiro(&quot;Digite o número da sua opção:&quot;);</span>
+<span class="nc" id="L37">                continuar = executar(opcao);</span>
+<span class="nc" id="L38">            }</span>
+<span class="nc" id="L39">            entrada.exibir(&quot;Sistema encerrado.&quot;);</span>
+<span class="nc" id="L40">        } catch (EntradaEncerradaException e) {</span>
+<span class="nc" id="L41">            entrada.exibir(&quot;Fim da entrada. Sistema encerrado.&quot;);</span>
+<span class="nc" id="L42">        }</span>
+<span class="nc" id="L43">    }</span>
+
+    /** Executa a opção escolhida e devolve falso quando o usuário pede para sair. */
+    private boolean executar(int opcao) {
+        try {
+<span class="nc bnc" id="L48" title="All 9 branches missed.">            switch (opcao) {</span>
+                case 1:
+<span class="nc" id="L50">                    dados.adicionar(utilsColaborador.criarColaborador());</span>
+<span class="nc" id="L51">                    entrada.exibir(&quot;Colaborador criado com sucesso&quot;);</span>
+<span class="nc" id="L52">                    break;</span>
+                case 2:
+<span class="nc" id="L54">                    utilsColaborador.procurarColaborador();</span>
+<span class="nc" id="L55">                    break;</span>
+                case 3:
+<span class="nc" id="L57">                    utilsColaborador.imprimirRelatorio();</span>
+<span class="nc" id="L58">                    break;</span>
+                case 4:
+<span class="nc" id="L60">                    utilsColaborador.imprimirResumo();</span>
+<span class="nc" id="L61">                    break;</span>
+                case 5:
+<span class="nc" id="L63">                    utilsColaborador.modificarColaborador();</span>
+<span class="nc" id="L64">                    break;</span>
+                case 6:
+<span class="nc" id="L66">                    utilsColaborador.imprimirTodosColaboradores();</span>
+<span class="nc" id="L67">                    break;</span>
+                case 7:
+<span class="nc" id="L69">                    utilsColaborador.removerColaborador();</span>
+<span class="nc" id="L70">                    break;</span>
+                case 0:
+<span class="nc" id="L72">                    return false;</span>
+                default:
+<span class="nc" id="L74">                    entrada.exibir(&quot;Opção inválida tente novamente!&quot;);</span>
+            }
+<span class="nc" id="L76">        } catch (PersistenciaException e) {</span>
+<span class="nc" id="L77">            entrada.exibir(&quot;Erro no arquivo de dados: &quot; + e.getMessage());</span>
+<span class="nc" id="L78">            entrada.exibir(&quot;Corrija ou remova o arquivo &quot; + dados.getArquivo()</span>
+                    + &quot; (faça uma cópia antes) e tente novamente. Nenhum dado foi alterado.&quot;);
+<span class="nc" id="L80">        }</span>
+<span class="nc" id="L81">        return true;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.0000</span></div></body></html>

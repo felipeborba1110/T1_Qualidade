@@ -1,0 +1,177 @@
+╷
+├─ JUnit Platform Suite ✔
+├─ JUnit Jupiter ✔
+│  ├─ Folha de pagamento e formatação ✔
+│  │  ├─ Folha vazia: quantidade zero, totais zerados e aviso no relatório ✔
+│  │  ├─ CT007 - relatório lista base, adicionais e salário final de cada colaborador (RF... ✔
+│  │  ├─ CT008 - quantidade 3, totais por categoria e total geral de R$ 7.550,00 (RF008) ✔
+│  │  ├─ Formatação monetária e percentual no padrão brasileiro (BUG007) ✔
+│  │  └─ A lista da folha não pode ser alterada por fora ✔
+│  ├─ Fábrica de colaboradores e conversão JSON ✔
+│  │  ├─ toJSON grava os campos do registro, incluindo o salário final calculado ✔
+│  │  ├─ Tipos registrados na ordem do menu: padrão, comissionado e produção ✔
+│  │  ├─ toJSON e fromJSON preservam todos os dados de cada tipo ✔
+│  │  ├─ Tipo base não oferece campos específicos para alteração ✔
+│  │  ├─ Registro sem tipo, com tipo desconhecido ou sem campo obrigatório é recusado ✔
+│  │  └─ RN008 - salário final gravado no arquivo é ignorado e recalculado ✔
+│  ├─ Validações das regras de negócio ✔
+│  │  ├─ CT012 - nome nulo, vazio ou só com espaços é inválido (RN002) ✔
+│  │  │  ├─ nome inválido: "null" ✔
+│  │  │  ├─ nome inválido: "" ✔
+│  │  │  ├─ nome inválido: " " ✔
+│  │  │  ├─ nome inválido: "   " ✔
+│  │  │  └─ nome inválido: " " ✔
+│  │  ├─ CT013 a CT017 - zero e positivos são aceitos (valor-limite) ✔
+│  │  │  ├─ valor 0.0 é aceito ✔
+│  │  │  ├─ valor 0.01 é aceito ✔
+│  │  │  ├─ valor 2.5 é aceito ✔
+│  │  │  └─ valor 10000.0 é aceito ✔
+│  │  ├─ CT012 - nome válido é aceito sem espaços nas pontas (RN002) ✔
+│  │  ├─ CT013 a CT017 - valores negativos são recusados (RN003 a RN007) ✔
+│  │  │  ├─ valor -0.01 é recusado ✔
+│  │  │  ├─ valor -1.0 é recusado ✔
+│  │  │  ├─ valor -2.5 é recusado ✔
+│  │  │  ├─ valor -100.0 é recusado ✔
+│  │  │  └─ valor -1000.0 é recusado ✔
+│  │  └─ CT011 - matrícula repetida não está disponível; matrícula nova está (RN001) ✔
+│  ├─ Fluxos de negócio pelo menu ✔
+│  │  ├─ CT012 - nome vazio recusado no cadastro e na alteração (RN002) ✔
+│  │  ├─ BUG003 - fim da entrada redirecionada encerra o sistema sem exceção ✔
+│  │  ├─ Alterar ou excluir matrícula inexistente informa o erro e volta ao menu ✔
+│  │  ├─ BUG006 - opção de alteração que não existe para o tipo é recusada ✔
+│  │  ├─ CT020 - texto, negativo e Enter vazio não encerram nem gravam dado inválido (RNF... ✔
+│  │  ├─ BUG002 - data.json corrompido: o menu informa o erro, não encerra e não altera o... ✔
+│  │  ├─ CT005 - consulta por id, por nome, listagem geral e id inexistente (RF005) ✔
+│  │  ├─ Listagem e relatório com cadastro vazio exibem aviso ✔
+│  │  ├─ CT016 e CT017 - quantidade e valor por unidade negativos recusados (RN006, RN007... ✔
+│  │  ├─ RF006 - alterar comissão, salário base, unidade e quantidade recalcula o salário ✔
+│  │  ├─ CT009 - nome alterado para Ana Maria permanece após reiniciar (RF009) ✔
+│  │  ├─ Opção inexistente no menu principal e no tipo é informada sem encerrar ✔
+│  │  ├─ CT010 - exclusão com S remove; com N mantém (RF009) ✔
+│  │  ├─ CT011 - id repetido é recusado e solicitado novamente; id 4 é aceito (RN001) ✔
+│  │  ├─ CT018 - nenhuma tela pede o salário final; ele aparece calculado (RN008) ✔
+│  │  ├─ BUG004 - consulta com cadastro vazio permite voltar ao menu (opção 0) ✔
+│  │  ├─ CT006 - alterar as vendas recalcula o salário final para R$ 3.000,00 (RF006) ✔
+│  │  ├─ RF009 - alterar o tipo de padrão para produção pede os novos dados e recalcula ✔
+│  │  ├─ CT014 e CT015 - vendas e percentual negativos recusados (RN004, RN005) ✔
+│  │  ├─ CT001 - cadastro pelo menu grava o colaborador e a listagem o exibe (RF001) ✔
+│  │  ├─ CT013 - salário base -100 recusado no cadastro e na alteração; 0 aceito (RN003) ✔
+│  │  └─ CT005 - nome inexistente informa e permite nova busca ✔
+│  ├─ REV-01 - Extensibilidade para novos tipos de remuneração (RNF004) ✔
+│  │  └─ Horista cadastrado pelo menu aparece na folha e no resumo junto dos tipos existe... ✔
+│  ├─ Persistência em arquivo JSON ✔
+│  │  ├─ CT010 - exclusão remove só o colaborador informado (RF009) ✔
+│  │  ├─ CT021 - dados permanecem após encerrar e reabrir (nova instância lê o mesmo arqu... ✔
+│  │  ├─ Consulta por nome ignora maiúsculas e espaços nas pontas (RF005) ✔
+│  │  ├─ Arquivo inexistente ou vazio equivale a lista vazia ✔
+│  │  ├─ CT009 - alteração gravada e mantida após reabrir (RF009) ✔
+│  │  ├─ CT001 - colaborador gravado no data.json e lido com os mesmos dados (RF001) ✔
+│  │  ├─ BUG002 - arquivo corrompido gera PersistenciaException e não é sobrescrito ✔
+│  │  ├─ Atualizar matrícula inexistente é recusado ✔
+│  │  ├─ Pasta inexistente gera PersistenciaException na gravação ✔
+│  │  ├─ CT011 - a persistência recusa matrícula repetida (RN001) ✔
+│  │  ├─ JSON que não é lista ou com registro inválido gera PersistenciaException ✔
+│  │  ├─ Arquivo gravado pela versão anterior (06_Banco_Dados/data.exemplo.json) continua... ✔
+│  │  └─ Nomes com acentuação são gravados e lidos em UTF-8 ✔
+│  ├─ Relatórios da folha a partir do arquivo ✔
+│  │  ├─ CT007 - folha com os três tipos, base, adicionais e salário final (RF007) ✔
+│  │  ├─ CT008 - resumo com quantidade 3, totais por categoria e total geral R$ 7.550,00 ... ✔
+│  │  └─ Consulta exibe os dados específicos e o percentual com decimais (BUG007) ✔
+│  ├─ Critérios de aceitação da ERS (ponta a ponta) ✔
+│  │  ├─ RNF002 - texto, negativo e campo vazio não encerram o sistema nem geram cálculo ✔
+│  │  ├─ RNF003 - cadastrar, sair (opção 0), abrir de novo: colaborador disponível ✔
+│  │  ├─ RN001 a RN007 - entradas inválidas recusadas com mensagem e solicitadas novament... ✔
+│  │  ├─ RF001 - matrícula 1, Ana, R$ 2.000,00, Padrão: gravado e exibido com os mesmos d... ✔
+│  │  ├─ RF002 - Padrão com base R$ 3.000,00: salário final R$ 3.000,00, sem adicionais ✔
+│  │  ├─ RF003 - base 2.000, vendas 10.000, 0,05: comissão R$ 500,00 e final R$ 2.500,00 ✔
+│  │  ├─ RF004 - base 1.800, 100 un a 2,50: produtividade R$ 250,00 e final R$ 2.050,00 ✔
+│  │  ├─ RF005 - consulta por matrícula, por nome, listagem e inexistente sem encerrar ✔
+│  │  ├─ RF006 - salário calculado (R$ 2.500,00) e recalculado após vendas = 20.000 (R$ 3... ✔
+│  │  ├─ RF007 - folha com os três tipos, cada um com base, adicionais e final ✔
+│  │  ├─ RF008 - quantidade 3, total por categoria e total geral de R$ 7.550,00 ✔
+│  │  ├─ RF009 - alterar nome, excluir com S e com N, e persistência após reiniciar ✔
+│  │  └─ RN008 - nenhuma tela solicita o salário final ✔
+│  ├─ Campos específicos das categorias ✔
+│  │  ├─ CT014 e CT015 - comissionado lê vendas e percentual, recusando negativos (RN004,... ✔
+│  │  ├─ RF006 - alterar cada campo da produção recalcula o salário ✔
+│  │  ├─ Detalhes exibidos na consulta de cada categoria ✔
+│  │  ├─ CT016 e CT017 - produção lê quantidade e valor por unidade, recusando negativos ... ✔
+│  │  └─ CT006 - alterar cada campo do comissionado recalcula o salário (RF006) ✔
+│  ├─ Leitura e validação de entradas ✔
+│  │  ├─ CT012 - nome vazio é recusado e solicitado novamente (RN002) ✔
+│  │  ├─ BUG003 - fim da entrada gera EntradaEncerradaException em vez de erro inesperado ✔
+│  │  ├─ CT013 - valor negativo é recusado e solicitado novamente; zero é aceito (RN003) ✔
+│  │  ├─ CT016 - quantidade negativa é recusada e solicitada novamente (RN006) ✔
+│  │  ├─ BUG005 - aceita vírgula ou ponto como separador decimal ✔
+│  │  │  ├─ "0,05" = 0.05 ✔
+│  │  │  ├─ "0.05" = 0.05 ✔
+│  │  │  ├─ "2,50" = 2.5 ✔
+│  │  │  ├─ "3000" = 3000 ✔
+│  │  │  ├─ "1.234,56" = 1234.56 ✔
+│  │  │  ├─ "-5" = -5 ✔
+│  │  │  ├─ ",5" = 0.5 ✔
+│  │  │  └─ "10000," = 10000 ✔
+│  │  ├─ Confirmação aceita somente S ou s ✔
+│  │  ├─ RNF002 - texto não numérico não é convertido ✔
+│  │  │  ├─ "abc" é inválido ✔
+│  │  │  ├─ "1a" é inválido ✔
+│  │  │  ├─ "R$10" é inválido ✔
+│  │  │  ├─ "1,2,3" é inválido ✔
+│  │  │  ├─ "NaN" é inválido ✔
+│  │  │  ├─ "Infinity" é inválido ✔
+│  │  │  ├─ "--1" é inválido ✔
+│  │  │  └─ "." é inválido ✔
+│  │  ├─ RNF002 - inteiro inválido ou fora da faixa não é convertido ✔
+│  │  │  ├─ "abc" é inválido ✔
+│  │  │  ├─ "1.5" é inválido ✔
+│  │  │  ├─ "2,0" é inválido ✔
+│  │  │  ├─ "99999999999" é inválido ✔
+│  │  │  └─ " " é inválido ✔
+│  │  ├─ CT020 - texto exibe mensagem e a entrada é solicitada novamente ✔
+│  │  └─ CT020 - Enter sem dado: o sistema continua aguardando, sem mensagem de erro ✔
+│  └─ Cálculo de salário por categoria ✔
+│     ├─ Regras de negócio aplicadas no modelo ✔
+│     │  ├─ CT012 - nome vazio é recusado pelo modelo (RN002) ✔
+│     │  ├─ Valor inválido na alteração não muda o dado anterior ✔
+│     │  └─ CT013 a CT017 - valores negativos são recusados pelo modelo (RN003 a RN007) ✔
+│     ├─ Colaborador por produção ✔
+│     │  ├─ RF006 - salário recalculado ao alterar quantidade e valor por unidade ✔
+│     │  ├─ Partições de equivalência e valores-limite da produção ✔
+│     │  │  ├─ base 1800 + 0 un × 2.50 = 1800.00 ✔
+│     │  │  ├─ base 1800 + 100 un × 0 = 1800.00 ✔
+│     │  │  ├─ base 0 + 1 un × 0.01 = 0.01 ✔
+│     │  │  └─ base 1000 + 333 un × 1.11 = 1369.63 ✔
+│     │  └─ CT004 - produtividade de R$ 250,00 e salário final de R$ 2.050,00 (RF004) ✔
+│     ├─ Colaborador comissionado ✔
+│     │  ├─ BUG001 - regressão: valores com centavos não perdem precisão ✔
+│     │  ├─ CT003 - comissão de R$ 500,00 e salário final de R$ 2.500,00 (RF003) ✔
+│     │  ├─ CT006 - salário final recalculado ao alterar as vendas para R$ 20.000,00 (RF006) ✔
+│     │  └─ Partições de equivalência e valores-limite da comissão ✔
+│     │     ├─ base 2000 + vendas 0 × 0.05 = 2000.00 ✔
+│     │     ├─ base 2000 + vendas 10000 × 0 = 2000.00 ✔
+│     │     ├─ base 0 + vendas 10000 × 0.05 = 500.00 ✔
+│     │     ├─ base 1500.50 + vendas 3333.33 × 0.03 = 1600.50 ✔
+│     │     └─ base 0 + vendas 1234567.89 × 1 = 1234567.89 ✔
+│     └─ Colaborador padrão ✔
+│        ├─ CT002 - salário final igual ao salário base (RF002) ✔
+│        └─ CT013 - salário base zero é aceito e gera salário final zero (RN003, valor-limit... ✔
+└─ JUnit Vintage ✔
+
+Test run finished after 754 ms
+[        26 containers found      ]
+[         0 containers skipped    ]
+[        26 containers started    ]
+[         0 containers aborted    ]
+[        26 containers successful ]
+[         0 containers failed     ]
+[       131 tests found           ]
+[         0 tests skipped         ]
+[       131 tests started         ]
+[         0 tests aborted         ]
+[       131 tests successful      ]
+[         0 tests failed          ]
+
+
+WARNING: Delegated to the 'execute' command.
+         This behaviour has been deprecated and will be removed in a future release.
+         Please use the 'execute' command directly.

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ColaboradorFactory.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sistema de Folha de Pagamento</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">ColaboradorFactory.java</span></div><h1>ColaboradorFactory.java</h1><pre class="source lang-java linenums">import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Supplier;
+
+import org.json.simple.JSONObject;
+
+/**
+ * Registro dos tipos de colaborador e criação de objetos a partir do código do tipo ou do data.json.
+ * Um novo tipo é incluído com uma subclasse de Colaborador e uma chamada a registrar() (RNF004).
+ */
+public final class ColaboradorFactory {
+
+    /** Tipo de colaborador disponível no sistema. */
+    public static final class TipoColaborador {
+        private final String codigo;
+        private final String descricao;
+        private final Supplier&lt;Colaborador&gt; criador;
+
+<span class="fc" id="L21">        TipoColaborador(String codigo, String descricao, Supplier&lt;Colaborador&gt; criador) {</span>
+<span class="fc" id="L22">            this.codigo = codigo;</span>
+<span class="fc" id="L23">            this.descricao = descricao;</span>
+<span class="fc" id="L24">            this.criador = criador;</span>
+<span class="fc" id="L25">        }</span>
+
+        public String getCodigo() {
+<span class="fc" id="L28">            return codigo;</span>
+        }
+
+        public String getDescricao() {
+<span class="fc" id="L32">            return descricao;</span>
+        }
+
+        Colaborador criar() {
+<span class="fc" id="L36">            return criador.get();</span>
+        }
+    }
+
+<span class="fc" id="L40">    private static final Map&lt;String, TipoColaborador&gt; TIPOS = new LinkedHashMap&lt;&gt;();</span>
+
+    static {
+<span class="fc" id="L43">        registrar(ColaboradorPadrao.TIPO, &quot;Colaborador Padrão&quot;, ColaboradorPadrao::new);</span>
+<span class="fc" id="L44">        registrar(ColaboradorComissionado.TIPO, &quot;Colaborador Comissionado&quot;, ColaboradorComissionado::new);</span>
+<span class="fc" id="L45">        registrar(ColaboradorProducao.TIPO, &quot;Colaborador Produção&quot;, ColaboradorProducao::new);</span>
+<span class="fc" id="L46">    }</span>
+
+    private ColaboradorFactory() {
+    }
+
+    public static synchronized void registrar(String codigo, String descricao, Supplier&lt;Colaborador&gt; criador) {
+<span class="fc" id="L52">        TIPOS.put(codigo, new TipoColaborador(codigo, descricao, criador));</span>
+<span class="fc" id="L53">    }</span>
+
+    /** Usado apenas pelos testes de extensibilidade para desfazer um registro temporário. */
+    static synchronized void removerRegistro(String codigo) {
+<span class="fc" id="L57">        TIPOS.remove(codigo);</span>
+<span class="fc" id="L58">    }</span>
+
+    public static synchronized List&lt;TipoColaborador&gt; tiposRegistrados() {
+<span class="fc" id="L61">        return new ArrayList&lt;&gt;(TIPOS.values());</span>
+    }
+
+    public static synchronized Colaborador novo(String codigo) {
+<span class="fc" id="L65">        TipoColaborador tipo = TIPOS.get(codigo);</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">        if (tipo == null) {</span>
+<span class="fc" id="L67">            throw new IllegalArgumentException(&quot;Tipo de colaborador desconhecido: &quot; + codigo);</span>
+        }
+<span class="fc" id="L69">        return tipo.criar();</span>
+    }
+
+    /** Reconstrói o colaborador gravado; o salário final é recalculado e não lido do arquivo (RN008). */
+    public static Colaborador fromJSON(JSONObject json) {
+<span class="fc" id="L74">        Object tipo = json.get(&quot;type&quot;);</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">        if (!(tipo instanceof String)) {</span>
+<span class="fc" id="L76">            throw new IllegalArgumentException(&quot;Registro sem o campo \&quot;type\&quot;&quot;);</span>
+        }
+<span class="fc" id="L78">        Colaborador colaborador = novo((String) tipo);</span>
+<span class="fc" id="L79">        colaborador.setId((int) Colaborador.lerNumero(json, &quot;id&quot;));</span>
+<span class="fc" id="L80">        Object nome = json.get(&quot;name&quot;);</span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">        colaborador.setName(nome == null ? null : nome.toString());</span>
+<span class="fc" id="L82">        colaborador.setBaseSalary(Colaborador.lerNumero(json, &quot;baseSalary&quot;));</span>
+<span class="fc" id="L83">        colaborador.carregarJSON(json);</span>
+<span class="fc" id="L84">        return colaborador;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.0000</span></div></body></html>

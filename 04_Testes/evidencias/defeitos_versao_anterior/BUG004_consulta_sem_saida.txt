@@ -1,0 +1,33 @@
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colabordores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+2
+Como deseja procurar por colaborador:
+1- Por ID
+2- Por Nome
+1
+Insira o ID do Colaborador:
+99
+Nenhum colaborador com este id, tente novamente!
+Como deseja procurar por colaborador:
+1- Por ID
+2- Por Nome
+1
+Insira o ID do Colaborador:
+1
+Nenhum colaborador com este id, tente novamente!
+Como deseja procurar por colaborador:
+1- Por ID
+2- Por Nome
+
+### RESULTADO DO ROTEIRO: TIMEOUT (sistema preso aguardando entrada)

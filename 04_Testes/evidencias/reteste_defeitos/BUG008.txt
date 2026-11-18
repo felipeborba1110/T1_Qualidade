@@ -1,0 +1,7 @@
+Cenário: BUG008 (reteste) - 200.000 opções inválidas seguidas de 0.
+Versão: 07_Executavel/folha-pagamento.jar
+------------------------------
+Digite o número da sua opção:
+Sistema encerrado.
+
+Situação: APROVADO (sem StackOverflowError)
