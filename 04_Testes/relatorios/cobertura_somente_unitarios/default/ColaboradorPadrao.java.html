@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ColaboradorPadrao.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sistema de Folha de Pagamento</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">ColaboradorPadrao.java</span></div><h1>ColaboradorPadrao.java</h1><pre class="source lang-java linenums">/**
+ * Colaborador que recebe apenas o salário base (RF002).
+ */
+public class ColaboradorPadrao extends Colaborador {
+
+    public static final String TIPO = &quot;padrao&quot;;
+
+<span class="fc" id="L8">    public ColaboradorPadrao() {</span>
+<span class="fc" id="L9">    }</span>
+
+    public ColaboradorPadrao(int id, String name, double baseSalary) {
+<span class="fc" id="L12">        super(id, name, baseSalary);</span>
+<span class="fc" id="L13">    }</span>
+
+    @Override
+    public String getType() {
+<span class="fc" id="L17">        return TIPO;</span>
+    }
+
+    @Override
+    public String getDescricaoTipo() {
+<span class="fc" id="L22">        return &quot;Padrão&quot;;</span>
+    }
+
+    @Override
+    public double calcularAdicional() {
+<span class="fc" id="L27">        return 0;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.0000</span></div></body></html>

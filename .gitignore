@@ -1,4 +1,6 @@
 .idea
 out
+target
 T1_Qualidade.iml
 data.json
+*.tmp

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "data.schema.json",
+  "title": "Arquivo de dados do Sistema de Folha de Pagamento (data.json)",
+  "description": "Lista de colaboradores. O campo finalSalary é gravado para leitura humana, mas o sistema o recalcula ao carregar (RN008).",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "type", "baseSalary"],
+    "properties": {
+      "id": {"type": "integer", "description": "Matrícula, única no arquivo (RN001)"},
+      "name": {"type": "string", "pattern": "\\S", "description": "Nome obrigatório (RN002)"},
+      "type": {"enum": ["padrao", "comissionado", "producao"]},
+      "baseSalary": {"type": "number", "minimum": 0, "description": "RN003"},
+      "finalSalary": {"type": "number", "minimum": 0, "description": "Calculado pelo sistema (RN008)"},
+      "productValue": {"type": "number", "minimum": 0, "description": "Valor das vendas do comissionado (RN004)"},
+      "commission": {"type": "number", "minimum": 0, "description": "Percentual de comissão como fração, 0.05 = 5% (RN005)"},
+      "prodQuant": {"type": "integer", "minimum": 0, "description": "Quantidade produzida (RN006)"},
+      "unitValue": {"type": "number", "minimum": 0, "description": "Valor por unidade (RN007)"}
+    },
+    "allOf": [
+      {"if": {"properties": {"type": {"const": "comissionado"}}},
+       "then": {"required": ["productValue", "commission"]}},
+      {"if": {"properties": {"type": {"const": "producao"}}},
+       "then": {"required": ["prodQuant", "unitValue"]}}
+    ]
+  }
+}

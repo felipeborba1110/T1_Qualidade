@@ -1,0 +1,231 @@
+mvn verify
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< br.edu.uniritter:folha-pagamento >------------------
+[INFO] Building Sistema de Folha de Pagamento 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Loaded 24543 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+[WARNING] Could not transfer metadata /.meta/prefixes.txt from/to apache.snapshots (https://repository.apache.org/snapshots): Connect to repository.apache.org:443 [repository.apache.org/37.27.138.133] failed: Connection timed out: getsockopt
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-shade-plugin/3.5.1/maven-shade-plugin-3.5.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-shade-plugin/3.5.1/maven-shade-plugin-3.5.1.pom (14 kB at 241 kB/s)
+[INFO] 
+[INFO] --- jacoco:0.8.11:prepare-agent (preparar-agente) @ folha-pagamento ---
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.core/0.8.11/org.jacoco.core-0.8.11.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.report/0.8.11/org.jacoco.report-0.8.11.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom (4.1 kB at 59 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.core/0.8.11/org.jacoco.core-0.8.11.pom (2.1 kB at 18 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.report/0.8.11/org.jacoco.report-0.8.11.pom (1.9 kB at 24 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11.pom (3.5 kB at 25 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.6/asm-commons-9.6.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/9.6/asm-tree-9.6.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/9.6/asm-tree-9.6.pom (2.6 kB at 54 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.6/asm-commons-9.6.pom (2.8 kB at 52 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.jar (247 kB at 1.7 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.core/0.8.11/org.jacoco.core-0.8.11.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.report/0.8.11/org.jacoco.report-0.8.11.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.6/asm-commons-9.6.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.core/0.8.11/org.jacoco.core-0.8.11.jar (210 kB at 1.1 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/9.6/asm-tree-9.6.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.report/0.8.11/org.jacoco.report-0.8.11.jar (131 kB at 535 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.jar (10 kB at 36 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar (301 kB at 1.0 MB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/9.6/asm-tree-9.6.jar (52 kB at 141 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.6/asm-commons-9.6.jar (72 kB at 191 kB/s)
+[INFO] argLine set to -javaagent:C:\\Users\\febera\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.11\\org.jacoco.agent-0.8.11-runtime.jar=destfile=C:\\Users\\febera\\Documents\\Coding\\T1_Qualidade\\T1_Qualidade\\05_Codigo_Fonte\\target\\jacoco.exec
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ folha-pagamento ---
+[INFO] skip non existing resourceDirectory C:\Users\febera\Documents\Coding\T1_Qualidade\T1_Qualidade\05_Codigo_Fonte\src\main\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ folha-pagamento ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 15 source files with javac [debug release 15] to target\classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ folha-pagamento ---
+[INFO] skip non existing resourceDirectory C:\Users\febera\Documents\Coding\T1_Qualidade\T1_Qualidade\05_Codigo_Fonte\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ folha-pagamento ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 13 source files with javac [debug release 15] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ folha-pagamento ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.2.5/surefire-junit-platform-3.2.5.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.2.5/surefire-junit-platform-3.2.5.pom (4.7 kB at 90 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/3.2.5/surefire-providers-3.2.5.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/3.2.5/surefire-providers-3.2.5.pom (2.6 kB at 41 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.3/junit-platform-launcher-1.9.3.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.2.5/common-java5-3.2.5.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.2.5/common-java5-3.2.5.pom (2.8 kB at 60 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.3/junit-platform-launcher-1.9.3.pom (3.0 kB at 55 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.2.5/surefire-junit-platform-3.2.5.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.2.5/surefire-junit-platform-3.2.5.jar (27 kB at 305 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.2.5/common-java5-3.2.5.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.3/junit-platform-launcher-1.9.3.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.2.5/common-java5-3.2.5.jar (18 kB at 231 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.3/junit-platform-launcher-1.9.3.jar (169 kB at 2.1 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.10.1/junit-platform-launcher-1.10.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.10.1/junit-platform-launcher-1.10.1.pom (3.0 kB at 36 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.10.1/junit-platform-launcher-1.10.1.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.10.1/junit-platform-launcher-1.10.1.jar (184 kB at 3.3 MB/s)
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running CalculoSalarioTest
+[INFO] Running CalculoSalarioTest$RegrasNoModelo
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.060 s -- in CalculoSalarioTest$RegrasNoModelo
+[INFO] Running CalculoSalarioTest$Producao
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.096 s -- in CalculoSalarioTest$Producao
+[INFO] Running CalculoSalarioTest$Comissionado
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in CalculoSalarioTest$Comissionado
+[INFO] Running CalculoSalarioTest$Padrao
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in CalculoSalarioTest$Padrao
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.197 s -- in CalculoSalarioTest
+[INFO] Running CamposEspecificosTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s -- in CamposEspecificosTest
+[INFO] Running ColaboradorFactoryTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in ColaboradorFactoryTest
+[INFO] Running CriteriosAceitacaoTest
+[ERROR] Tests run: 13, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.227 s <<< FAILURE! -- in CriteriosAceitacaoTest
+[ERROR] CriteriosAceitacaoTest.rnf003 -- Time elapsed: 0.016 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+        at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+        at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+        at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+        at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+        at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+        at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+        at CriteriosAceitacaoTest.rnf003(CriteriosAceitacaoTest.java:180)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+[ERROR] CriteriosAceitacaoTest.rf001 -- Time elapsed: 0.007 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+        at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+        at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+        at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+        at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+        at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+        at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+        at CriteriosAceitacaoTest.rf001(CriteriosAceitacaoTest.java:67)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+[ERROR] CriteriosAceitacaoTest.rf005 -- Time elapsed: 0.013 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+        at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+        at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+        at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+        at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+        at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+        at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+        at CriteriosAceitacaoTest.rf005(CriteriosAceitacaoTest.java:97)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+[ERROR] CriteriosAceitacaoTest.rf006 -- Time elapsed: 0.009 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+        at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+        at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+        at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+        at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+        at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+        at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+        at CriteriosAceitacaoTest.rf006(CriteriosAceitacaoTest.java:108)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+[INFO] Running EntradaConsoleTest
+[INFO] Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 s -- in EntradaConsoleTest
+[INFO] Running ExtensibilidadeTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s -- in ExtensibilidadeTest
+[INFO] Running FluxosNegocioIntegracaoTest
+[ERROR] Tests run: 22, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.236 s <<< FAILURE! -- in FluxosNegocioIntegracaoTest
+[ERROR] FluxosNegocioIntegracaoTest.ct009AlteracaoDeNome -- Time elapsed: 0.013 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+        at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+        at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+        at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+        at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+        at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+        at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+        at FluxosNegocioIntegracaoTest.ct009AlteracaoDeNome(FluxosNegocioIntegracaoTest.java:146)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+[ERROR] FluxosNegocioIntegracaoTest.ct001CadastroPeloMenu -- Time elapsed: 0.013 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+        at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+        at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+        at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+        at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+        at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+        at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+        at FluxosNegocioIntegracaoTest.ct001CadastroPeloMenu(FluxosNegocioIntegracaoTest.java:56)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+[INFO] Running FolhaPagamentoTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in FolhaPagamentoTest
+[INFO] Running PersistenciaIntegracaoTest
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.089 s -- in PersistenciaIntegracaoTest
+[INFO] Running RelatoriosIntegracaoTest
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.043 s <<< FAILURE! -- in RelatoriosIntegracaoTest
+[ERROR] RelatoriosIntegracaoTest.consultaComDetalhes -- Time elapsed: 0.016 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+        at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+        at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+        at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+        at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+        at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+        at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+        at RelatoriosIntegracaoTest.consultaComDetalhes(RelatoriosIntegracaoTest.java:61)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+[INFO] Running ValidadorColaboradorTest
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s -- in ValidadorColaboradorTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   CriteriosAceitacaoTest.rf001:67 expected: <true> but was: <false>
+[ERROR]   CriteriosAceitacaoTest.rf005:97 expected: <true> but was: <false>
+[ERROR]   CriteriosAceitacaoTest.rf006:108 expected: <true> but was: <false>
+[ERROR]   CriteriosAceitacaoTest.rnf003:180 expected: <true> but was: <false>
+[ERROR]   FluxosNegocioIntegracaoTest.ct001CadastroPeloMenu:56 expected: <true> but was: <false>
+[ERROR]   FluxosNegocioIntegracaoTest.ct009AlteracaoDeNome:146 expected: <true> but was: <false>
+[ERROR]   RelatoriosIntegracaoTest.consultaComDetalhes:61 expected: <true> but was: <false>
+[INFO] 
+[ERROR] Tests run: 131, Failures: 7, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[ERROR] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  29.161 s
+[INFO] Finished at: 2026-11-18T20:05:07-03:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test (default-test) on project folha-pagamento: There are test failures.
+[ERROR] 
+[ERROR] Please refer to C:\Users\febera\Documents\Coding\T1_Qualidade\T1_Qualidade\05_Codigo_Fonte\target\surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

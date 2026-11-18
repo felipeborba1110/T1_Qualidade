@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Dinheiro.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sistema de Folha de Pagamento</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Dinheiro.java</span></div><h1>Dinheiro.java</h1><pre class="source lang-java linenums">import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+
+/**
+ * Operações monetárias com arredondamento em centavos.
+ * Os cálculos usam BigDecimal para evitar a imprecisão de ponto flutuante (BUG001).
+ */
+public final class Dinheiro {
+
+<span class="fc" id="L13">    public static final Locale LOCALE_BRASIL = new Locale(&quot;pt&quot;, &quot;BR&quot;);</span>
+    private static final int CASAS_DECIMAIS = 2;
+
+    private Dinheiro() {
+    }
+
+    public static double multiplicar(double valor, double fator) {
+<span class="fc" id="L20">        return arredondar(BigDecimal.valueOf(valor).multiply(BigDecimal.valueOf(fator)));</span>
+    }
+
+    public static double somar(double valor, double parcela) {
+<span class="fc" id="L24">        return arredondar(BigDecimal.valueOf(valor).add(BigDecimal.valueOf(parcela)));</span>
+    }
+
+    private static double arredondar(BigDecimal valor) {
+<span class="fc" id="L28">        return valor.setScale(CASAS_DECIMAIS, RoundingMode.HALF_UP).doubleValue();</span>
+    }
+
+    /** Formata no padrão brasileiro, por exemplo &quot;R$ 3.000,00&quot;, independentemente do idioma do sistema. */
+    public static String formatar(double valor) {
+<span class="fc" id="L33">        return String.format(LOCALE_BRASIL, &quot;R$ %,.2f&quot;, valor);</span>
+    }
+
+    /** Formata um percentual informado como fração, por exemplo 0.025 vira &quot;2,5%&quot; (BUG007). */
+    public static String formatarPercentual(double fracao) {
+<span class="fc" id="L38">        DecimalFormat formato = new DecimalFormat(&quot;#,##0.##&quot;, DecimalFormatSymbols.getInstance(LOCALE_BRASIL));</span>
+<span class="fc" id="L39">        formato.setRoundingMode(RoundingMode.HALF_UP);</span>
+<span class="fc" id="L40">        return formato.format(BigDecimal.valueOf(fracao).multiply(BigDecimal.valueOf(100))) + &quot;%&quot;;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.0000</span></div></body></html>

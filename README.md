@@ -29,39 +29,54 @@ Sistema em **Java** para cadastro, gerenciamento e cálculo da folha de pagament
 ## Requisitos
 
 - Java 15 ou superior (recomendado JDK 21)
-- `json-simple-1.1.1.jar` (incluído em `05_Codigo_Fonte/`)
+- Apache Maven 3.8 ou superior para compilar e executar os testes (opcional para apenas usar o sistema)
+- `json-simple-1.1.1` (baixada pelo Maven; também incluída em `05_Codigo_Fonte/lib/` para compilação manual)
 
-## Como compilar e executar
+## Como executar (usuário)
 
-O código-fonte fica em `05_Codigo_Fonte/`. Entre nessa pasta antes de rodar os comandos.
+O executável pronto está em `07_Executavel/folha-pagamento.jar` e já inclui a biblioteca JSON.
 
-**Compilar**
+```
+java -jar 07_Executavel/folha-pagamento.jar
+```
+
+Os dados são gravados em `data.json`, na pasta onde o comando é executado. Para usar outro arquivo:
+
+```
+java -Dfolha.dados=C:\folha\dados.json -jar folha-pagamento.jar
+```
+
+Um exemplo da estrutura está em `06_Banco_Dados/data.exemplo.json`.
+
+## Como compilar e testar (desenvolvimento)
+
+O código-fonte segue a estrutura do Maven em `05_Codigo_Fonte/` (`src/main/java` e `src/test/java`).
 
 ```
 cd 05_Codigo_Fonte
-javac -cp json-simple-1.1.1.jar -d out Main.java Menu.java Colaborador.java ColaboradorComissionado.java ColaboradorProducao.java JsonFileManager.java UtilsColaborador.java
+mvn verify
 ```
 
-**Executar no Windows**
+O comando compila, executa os 131 testes (unitários, de integração e de aceitação), gera o relatório de
+cobertura em `target/site/jacoco/index.html`, verifica a meta de 80% de cobertura de linhas e gera
+`target/folha-pagamento.jar`. Para executar só uma categoria: `mvn test -Dgroups=unitario`
+(ou `integracao`, `aceitacao`).
+
+**Sem Maven** (compilação manual do sistema):
 
 ```
-java -cp "out;json-simple-1.1.1.jar" Main
+cd 05_Codigo_Fonte
+javac -encoding UTF-8 -cp lib/json-simple-1.1.1.jar -d out src/main/java/*.java
+java -cp "out;lib/json-simple-1.1.1.jar" Main      (Windows)
+java -cp "out:lib/json-simple-1.1.1.jar" Main      (Linux ou macOS)
 ```
-
-**Executar no Linux ou macOS**
-
-```
-java -cp "out:json-simple-1.1.1.jar" Main
-```
-
-Os dados são gravados em `data.json`, criado na pasta onde o sistema é executado. Um exemplo da estrutura está em `06_Banco_Dados/data.exemplo.json`.
 
 ## Como usar
 
 | Opção | Ação |
 |---|---|
 | 1 | Criar colaborador |
-| 2 | Consultar colaborador (por ID ou por nome) |
+| 2 | Consultar colaborador (por ID ou por nome; 0 volta ao menu) |
 | 3 | Relatório da folha de pagamento |
 | 4 | Resumo da folha de pagamento |
 | 5 | Modificar colaborador |
@@ -69,13 +84,19 @@ Os dados são gravados em `data.json`, criado na pasta onde o sistema é executa
 | 7 | Deletar colaborador |
 | 0 | Sair |
 
-Decimais usam vírgula no Windows em português (exemplo: `0,05` para 5%).
+Valores decimais aceitam vírgula ou ponto (`0,05` ou `0.05` para 5%), em qualquer idioma do sistema operacional.
 
-## Testes
+## Testes e qualidade
 
-**Hoje:** os casos de teste (CT001 a CT021 e REV-01) estão em `04_Testes/Plano_de_Testes_e_Casos_de_Teste.pdf` e são executados manualmente, pelo menu, seguindo os passos e a massa de dados (M1, M2 e M3) do documento.
+| Item | Local |
+|---|---|
+| Plano e casos de teste (A1) | `04_Testes/Plano_de_Testes_e_Casos_de_Teste.pdf` |
+| Código dos testes (JUnit 5) | `05_Codigo_Fonte/src/test/java` |
+| Relatório de execução e XML do JUnit | `04_Testes/relatorios/` |
+| Relatório de cobertura (JaCoCo) | `04_Testes/relatorios/cobertura_jacoco/index.html` |
+| Evidências de aceitação e reteste de defeitos | `04_Testes/evidencias/` |
 
-**Planejado:** testes automatizados com JUnit 5, cobertura com JaCoCo e build com Maven (`mvn test`). O `pom.xml` **ainda não existe** no repositório; a tarefa, o responsável e o prazo estão na seção "Estado da Infraestrutura de Testes" do Plano de Testes.
+Resultado da execução de 18/11/2026: 131 testes, 131 aprovados; cobertura de linhas de 98,8% e de ramos de 95,8%.
 
 ## Estrutura do projeto
 
@@ -84,13 +105,13 @@ Decimais usam vírgula no Windows em português (exemplo: `0,05` para 5%).
 | `01_Requisitos` | Documento de Visão e ERS |
 | `02_Analise` | Casos de uso e diagramas UML |
 | `03_Projeto` | Documento de Arquitetura |
-| `04_Testes` | Plano de Testes e Casos de Teste |
-| `05_Codigo_Fonte` | Código-fonte e `json-simple-1.1.1.jar` |
+| `04_Testes` | Plano e casos de teste, relatórios de execução e cobertura, evidências |
+| `05_Codigo_Fonte` | Projeto Maven (`pom.xml`, `src/main/java`, `src/test/java`) e `lib/` |
 | `06_Banco_Dados` | Exemplo da estrutura do `data.json` |
-| `07_Executavel` | Reservada para o pacote executável |
-| `08_Manuais` | Reservada para os manuais |
-| `09_Homologacao` | Reservada para o termo de homologação |
-| `10_Qualidade` | PGQ e planejamento do projeto |
+| `07_Executavel` | `folha-pagamento.jar` executável |
+| `08_Manuais` | Manual do usuário e manual técnico |
+| `09_Homologacao` | Termo de homologação |
+| `10_Qualidade` | PGQ, planejamento, registro de defeitos, métricas, revisão técnica e relatório final |
 | `11_Apresentacao` | Material da apresentação |
 
 ## Padrão de commits

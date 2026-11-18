@@ -1,6 +1,9 @@
 {
+    "java.project.sourcePaths": [
+        "05_Codigo_Fonte/src/main/java",
+        "05_Codigo_Fonte/src/test/java"
+    ],
     "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "json-simple-1.1.1.jar"
+        "05_Codigo_Fonte/lib/**/*.jar"
     ]
 }

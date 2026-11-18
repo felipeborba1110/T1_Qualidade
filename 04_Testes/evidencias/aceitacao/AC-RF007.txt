@@ -1,0 +1,165 @@
+Cenário: AC-RF007 - Folha de pagamento com os três tipos
+Requisito: RF007 / CT007
+Resultado esperado: Folha lista Ana R$ 3.000,00; Bruno 2.000 + 500 = 2.500; Carla 1.800 + 250 = 2.050
+Executável: 07_Executavel/folha-pagamento.jar | Data: 18/11/2026
+Comando: java -jar folha-pagamento.jar (data.json limpo antes do cenário)
+
+=============== EXECUÇÃO 1 DO SISTEMA ===============
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+1
+------ Adicionando colaborador ------
+Insira o id:
+1
+Insira o nome:
+Ana
+Insira o salário base:
+3000
+Insira o tipo pelo número:
+1- Colaborador Padrão
+2- Colaborador Comissionado
+3- Colaborador Produção
+1
+Colaborador criado com sucesso
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+1
+------ Adicionando colaborador ------
+Insira o id:
+2
+Insira o nome:
+Bruno
+Insira o salário base:
+2000
+Insira o tipo pelo número:
+1- Colaborador Padrão
+2- Colaborador Comissionado
+3- Colaborador Produção
+2
+Insira o valor de venda dos produtos:
+10000
+Insira o percentual de comissão: (0,50 = 50%)
+0,05
+Colaborador criado com sucesso
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+1
+------ Adicionando colaborador ------
+Insira o id:
+3
+Insira o nome:
+Carla
+Insira o salário base:
+1800
+Insira o tipo pelo número:
+1- Colaborador Padrão
+2- Colaborador Comissionado
+3- Colaborador Produção
+3
+Insira a quantidade produzida:
+100
+Insira o valor de cada unidade:
+2,50
+Colaborador criado com sucesso
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+3
+*** Relatório de Folha de Pagamentos ***
+ID: 1
+Nome: Ana
+Tipo: Padrão
+Salário Base: R$ 3.000,00
+Adicionais: R$ 0,00
+Salário Final: R$ 3.000,00
+------------------------------
+ID: 2
+Nome: Bruno
+Tipo: Comissionado
+Salário Base: R$ 2.000,00
+Adicionais: R$ 500,00
+Salário Final: R$ 2.500,00
+------------------------------
+ID: 3
+Nome: Carla
+Tipo: Produção
+Salário Base: R$ 1.800,00
+Adicionais: R$ 250,00
+Salário Final: R$ 2.050,00
+------------------------------
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+0
+Sistema encerrado.
+
+=============== CONTEÚDO FINAL DO data.json ===============
+[{"finalSalary":3000.0,"name":"Ana","baseSalary":3000.0,"id":1,"type":"padrao"},{"productValue":10000.0,"finalSalary":2500.0,"name":"Bruno","baseSalary":2000.0,"commission":0.05,"id":2,"type":"comissionado"},{"finalSalary":2050.0,"prodQuant":100,"name":"Carla","baseSalary":1800.0,"id":3,"type":"producao","unitValue":2.5}]
+
+Resultado obtido: Exibido conforme esperado: Nome: Ana
+Tipo: Padrão
+Salário Base: R$ 3.000,00
+Adicionais: R$ 0,00
+Salário Final: R$ 3.000,00; Nome: Bruno
+Tipo: Comissionado
+Salário Base: R$ 2.000,00
+Adicionais: R$ 500,00
+Salário Final: R$ 2.500,00; Nome: Carla
+Tipo: Produção
+Salário Base: R$ 1.800,00
+Adicionais: R$ 250,00
+Salário Final: R$ 2.050,00
+Situação: APROVADO

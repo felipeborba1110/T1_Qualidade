@@ -1,0 +1,83 @@
+Cenário: AC-RF001 - Cadastrar colaborador padrão
+Requisito: RF001
+Resultado esperado: Colaborador gravado em data.json e exibido na consulta com os mesmos dados
+Executável: 07_Executavel/folha-pagamento.jar | Data: 18/11/2026
+Comando: java -jar folha-pagamento.jar (data.json limpo antes do cenário)
+
+=============== EXECUÇÃO 1 DO SISTEMA ===============
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+1
+------ Adicionando colaborador ------
+Insira o id:
+1
+Insira o nome:
+Ana
+Insira o salário base:
+2000
+Insira o tipo pelo número:
+1- Colaborador Padrão
+2- Colaborador Comissionado
+3- Colaborador Produção
+1
+Colaborador criado com sucesso
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+2
+Como deseja procurar por colaborador:
+1- Por ID
+2- Por Nome
+0- Voltar ao menu
+1
+Insira o ID do Colaborador:
+1
+------ Colaborador Encontrado -----
+ID: 1
+Nome: Ana
+Salário Base: R$ 2.000,00
+Tipo: Padrão
+Salário Final: R$ 2.000,00
+------------------------------
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+0
+Sistema encerrado.
+
+=============== CONTEÚDO FINAL DO data.json ===============
+[{"finalSalary":2000.0,"name":"Ana","baseSalary":2000.0,"id":1,"type":"padrao"}]
+
+Resultado obtido: Consulta exibiu ID 1, Ana, R$ 2.000,00, Padrão; data.json contém o registro
+Situação: APROVADO

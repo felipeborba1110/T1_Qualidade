@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ColaboradorProducao.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sistema de Folha de Pagamento</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">ColaboradorProducao.java</span></div><h1>ColaboradorProducao.java</h1><pre class="source lang-java linenums">import java.util.List;
+
+import org.json.simple.JSONObject;
+
+/**
+ * Colaborador que recebe por unidade produzida (RF004).
+ * Produtividade = quantidade produzida × valor por unidade.
+ */
+public class ColaboradorProducao extends Colaborador {
+
+    public static final String TIPO = &quot;producao&quot;;
+    private static final String MSG_QUANTIDADE = &quot;Insira a quantidade produzida:&quot;;
+    private static final String MSG_VALOR_UNIDADE = &quot;Insira o valor de cada unidade:&quot;;
+
+    private int prodQuant;
+    private double unitValue;
+
+<span class="fc" id="L18">    public ColaboradorProducao() {</span>
+<span class="fc" id="L19">    }</span>
+
+    public ColaboradorProducao(int id, String name, double baseSalary, int prodQuant, double unitValue) {
+<span class="fc" id="L22">        super(id, name, baseSalary);</span>
+<span class="fc" id="L23">        setProdQuant(prodQuant);</span>
+<span class="fc" id="L24">        setUnitValue(unitValue);</span>
+<span class="fc" id="L25">    }</span>
+
+    @Override
+    public String getType() {
+<span class="fc" id="L29">        return TIPO;</span>
+    }
+
+    @Override
+    public String getDescricaoTipo() {
+<span class="fc" id="L34">        return &quot;Produção&quot;;</span>
+    }
+
+    @Override
+    public double calcularAdicional() {
+<span class="fc" id="L39">        return Dinheiro.multiplicar(prodQuant, unitValue);</span>
+    }
+
+    @Override
+    @SuppressWarnings(&quot;unchecked&quot;)
+    protected void preencherJSON(JSONObject json) {
+<span class="fc" id="L45">        json.put(&quot;prodQuant&quot;, prodQuant);</span>
+<span class="fc" id="L46">        json.put(&quot;unitValue&quot;, unitValue);</span>
+<span class="fc" id="L47">    }</span>
+
+    @Override
+    protected void carregarJSON(JSONObject json) {
+<span class="fc" id="L51">        setProdQuant((int) lerNumero(json, &quot;prodQuant&quot;));</span>
+<span class="fc" id="L52">        setUnitValue(lerNumero(json, &quot;unitValue&quot;));</span>
+<span class="fc" id="L53">    }</span>
+
+    @Override
+    public void lerDadosEspecificos(EntradaConsole entrada) {
+<span class="fc" id="L57">        setProdQuant(entrada.lerInteiroNaoNegativo(MSG_QUANTIDADE));</span>
+<span class="fc" id="L58">        setUnitValue(entrada.lerDecimalNaoNegativo(MSG_VALOR_UNIDADE));</span>
+<span class="fc" id="L59">    }</span>
+
+    @Override
+    public List&lt;String&gt; getCamposEspecificos() {
+<span class="fc" id="L63">        return List.of(&quot;Valor da Unidade&quot;, &quot;Quantidade de Unidades&quot;);</span>
+    }
+
+    @Override
+    public void alterarCampoEspecifico(int indice, EntradaConsole entrada) {
+<span class="pc bpc" id="L68" title="1 of 3 branches missed.">        switch (indice) {</span>
+            case 0:
+<span class="fc" id="L70">                setUnitValue(entrada.lerDecimalNaoNegativo(&quot;Insira o novo valor da unidade:&quot;));</span>
+<span class="fc" id="L71">                break;</span>
+            case 1:
+<span class="fc" id="L73">                setProdQuant(entrada.lerInteiroNaoNegativo(&quot;Insira a nova quantidade produzida:&quot;));</span>
+<span class="fc" id="L74">                break;</span>
+            default:
+<span class="nc" id="L76">                super.alterarCampoEspecifico(indice, entrada);</span>
+        }
+<span class="fc" id="L78">    }</span>
+
+    @Override
+    public List&lt;String&gt; getDetalhes() {
+<span class="fc" id="L82">        return List.of(</span>
+<span class="fc" id="L83">                &quot;Valor da Unidade: &quot; + Dinheiro.formatar(unitValue),</span>
+                &quot;Quantidade de Unidades: &quot; + prodQuant,
+<span class="fc" id="L85">                &quot;Produtividade: &quot; + Dinheiro.formatar(calcularAdicional()));</span>
+    }
+
+    public int getProdQuant() {
+<span class="fc" id="L89">        return prodQuant;</span>
+    }
+
+    public final void setProdQuant(int prodQuant) {
+<span class="fc" id="L93">        this.prodQuant = (int) ValidadorColaborador.validarNaoNegativo(prodQuant, &quot;Quantidade produzida&quot;);</span>
+<span class="fc" id="L94">    }</span>
+
+    public double getUnitValue() {
+<span class="fc" id="L97">        return unitValue;</span>
+    }
+
+    public final void setUnitValue(double unitValue) {
+<span class="fc" id="L101">        this.unitValue = ValidadorColaborador.validarNaoNegativo(unitValue, &quot;Valor por unidade&quot;);</span>
+<span class="fc" id="L102">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.0000</span></div></body></html>

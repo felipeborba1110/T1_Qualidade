@@ -1,0 +1,112 @@
+Cenário: AC-RN001 - Matrícula repetida
+Requisito: RN001 / CT011
+Resultado esperado: Cadastro recusado com mensagem e matrícula solicitada novamente
+Executável: 07_Executavel/folha-pagamento.jar | Data: 18/11/2026
+Comando: java -jar folha-pagamento.jar (data.json limpo antes do cenário)
+
+=============== EXECUÇÃO 1 DO SISTEMA ===============
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+1
+------ Adicionando colaborador ------
+Insira o id:
+1
+Insira o nome:
+Ana
+Insira o salário base:
+3000
+Insira o tipo pelo número:
+1- Colaborador Padrão
+2- Colaborador Comissionado
+3- Colaborador Produção
+1
+Colaborador criado com sucesso
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+1
+------ Adicionando colaborador ------
+Insira o id:
+1
+Colaborador com este id já existe, tente novamente!
+Insira o id:
+4
+Insira o nome:
+Davi
+Insira o salário base:
+1000
+Insira o tipo pelo número:
+1- Colaborador Padrão
+2- Colaborador Comissionado
+3- Colaborador Produção
+1
+Colaborador criado com sucesso
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+6
+*** Lista de Colaboradores ***
+ID: 1
+Nome: Ana
+Salário Base: R$ 3.000,00
+Tipo: Padrão
+Salário Final: R$ 3.000,00
+------------------------------
+ID: 4
+Nome: Davi
+Salário Base: R$ 1.000,00
+Tipo: Padrão
+Salário Final: R$ 1.000,00
+------------------------------
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+0
+Sistema encerrado.
+
+=============== CONTEÚDO FINAL DO data.json ===============
+[{"finalSalary":3000.0,"name":"Ana","baseSalary":3000.0,"id":1,"type":"padrao"},{"finalSalary":1000.0,"name":"Davi","baseSalary":1000.0,"id":4,"type":"padrao"}]
+
+Resultado obtido: Exibido conforme esperado: Colaborador com este id já existe, tente novamente!; ID: 4
+Situação: APROVADO

@@ -1,0 +1,82 @@
+Cenário: BUG007 - Percentual fracionário exibido arredondado
+Requisito: RF005
+Resultado esperado: Comissão 0,025 exibida como 2,5%
+Executável: 07_Executavel/folha-pagamento.jar | Data: 18/11/2026
+Comando: java -jar folha-pagamento.jar (data.json limpo antes do cenário)
+
+=============== EXECUÇÃO 1 DO SISTEMA ===============
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+1
+------ Adicionando colaborador ------
+Insira o id:
+2
+Insira o nome:
+Bruno
+Insira o salário base:
+2000
+Insira o tipo pelo número:
+1- Colaborador Padrão
+2- Colaborador Comissionado
+3- Colaborador Produção
+2
+Insira o valor de venda dos produtos:
+10000
+Insira o percentual de comissão: (0,50 = 50%)
+0,025
+Colaborador criado com sucesso
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+6
+*** Lista de Colaboradores ***
+ID: 2
+Nome: Bruno
+Salário Base: R$ 2.000,00
+Tipo: Comissionado
+Salário Final: R$ 2.250,00
+Valor do produto: R$ 10.000,00
+Comissão: 2,5% (R$ 250,00)
+------------------------------
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colaboradores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+0
+Sistema encerrado.
+
+=============== CONTEÚDO FINAL DO data.json ===============
+[{"productValue":10000.0,"finalSalary":2250.0,"name":"Bruno","baseSalary":2000.0,"commission":0.025,"id":2,"type":"comissionado"}]
+
+Resultado obtido: Exibido conforme esperado: Comissão: 2,5% (R$ 250,00)
+Situação: APROVADO

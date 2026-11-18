@@ -1,0 +1,68 @@
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colabordores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+1
+------ Adicionando colaborador ------
+Insira o id:
+2
+Insira o nome:
+Bruno
+Insira o salário base:
+0
+Insira o tipo pelo número:
+1- Colaborador Padrão
+2- Colaborador Comissionado
+3- Colaborador Produção
+2
+Insira o valor de venda dos produtos:
+1234567,89
+Insira o percentual de comissão: (0,50 = 50%)
+1
+Colaborador criado com sucesso
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colabordores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+4
+*** Resumo da Folha de Pagamentos ***
+Quantidade de colaboradores: 1
+Total de Pagamento para Colaboradores Padrão: R$ 0,00
+Total de Pagamento para Colaboradores Comissionado: R$ 1.234.567,88
+Total de Pagamento para Colaboradores de Produção: R$ 0,00
+Total da Folha de Pagamentos: R$ 1.234.567,88
+------------------------------
+=============================
+            MENU
+=============================
+1- Criar Colaborador
+2- Consultar Colaborador
+3- Relatórios de Folha de Pagamento
+4- Resumo da Folha de Pagamentos
+5- Modificar Colaborador
+6- Mostrar todos Colabordores
+7- Deletar Colaborador
+0- Sair
+------------------------------
+Digite o número da sua opção:
+0
+
+### RESULTADO DO ROTEIRO: ok
